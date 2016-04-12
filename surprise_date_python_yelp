@@ -1,5 +1,6 @@
 #python yelp api 
 #by col-n
+#pip install yelp
 
 from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
@@ -7,7 +8,7 @@ import io
 
 
 # read API keys
-with io.open('/Users/Owner/Desktop/Colin/webdev/surprise-date/config_secret.json') as cred:
+with io.open(XXX'creds.json file here'XXX) as cred:
     creds = json.load(cred)
     auth = Oauth1Authenticator(**creds)
     client = Client(auth)
