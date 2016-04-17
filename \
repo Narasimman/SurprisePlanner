@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask.ext.mysql import MySQL
 
@@ -10,9 +11,13 @@ mysql = MySQL(app)
 @app.route('/')
 def users():
         cur = mysql.connect().cursor()
-        cur.execute('''SELECT userID FROM users''')
+        cur.execute('''SELECT EXISTS(SELECT 1 FROM users WHERE userID='niha')''')
         data = cur.fetchall()
-        return str(data)
+	if len(data)==0:
+		return str(data)
+
+#api.add_resource(users, '/users')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7002,debug=True)
+
