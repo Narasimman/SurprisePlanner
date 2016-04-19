@@ -17,7 +17,7 @@ def get_results(lparams):
 
 def get_search_params(lparams):
     import json
-    with open("/Users/Owner/Desktop/Colin/webdev/surprise-date/config_secret_ebrite.json") as json_file:
+    with open("xxx PATH TO CONFIG FILE xxx") as json_file:
         json_data = json.load(json_file)
         anon_token = json_data["anon_token"]
     payload ={}
