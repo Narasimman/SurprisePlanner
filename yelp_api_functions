@@ -5,7 +5,7 @@
 def get_results(lparams):
     import rauth
     import csv
-    with open("/Users/colin/Desktop/config_secret.json") as json_file:
+    with open("xxx PATH_TO_CONFIG_FILE xxx") as json_file:
         json_data = json.load(json_file)
     session = rauth.OAuth1Session(
 		consumer_key = json_data["consumer_key"]
@@ -28,6 +28,6 @@ def get_search_params(lparams):
     
     return params
     
-#usage: x = ['beer','40.788022', '-74.399797', '1']
+#example usage: x = ['beer','40.788022', '-74.399797', '1']
 #get_results(x)
     
