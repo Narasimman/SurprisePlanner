@@ -2,6 +2,8 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask import Flask,session, request, flash, url_for, redirect, render_template, abort ,g
 from flask.ext.login import LoginManager, login_user , logout_user , current_user , login_required
+from werkzeug.security import generate_password_hash, \
+     check_password_hash
 from datetime import datetime
 
 app = Flask(__name__)
@@ -21,18 +23,24 @@ class User(db.Model):
     __tablename__ = "users"
     id = db.Column('user_id',db.Integer , primary_key=True)
     username = db.Column('username', db.String(100))
-    password = db.Column('password' , db.String(100))
+    password = db.Column('password' , db.String(160))
     email = db.Column('email',db.String(100))
-    zip = db.Column('zip',db.String(100))
+    
     phoneNumber = db.Column('phoneNumber',db.Integer)
     registered_on = db.Column('registered_on' , db.DateTime)
  
     def __init__(self , username ,password , email):
         self.username = username
-        self.password = password
+        self.set_password(password)
         self.email = email
         self.registered_on = datetime.utcnow()
+    
+    def set_password(self, password):
+	self.password = generate_password_hash(password)
 
+    def check_password(self, password):
+	return check_password_hash(self.password, password)
+			
     def is_authenticated(self):
         return True
  
@@ -49,7 +57,6 @@ class User(db.Model):
         return '<User %r>' % (self.username)
 
 @app.route('/register' , methods=['GET','POST'])
-
 def register():
     if request.method == 'GET':
         return render_template('register.html')
@@ -65,14 +72,20 @@ def login():
         return render_template('login.html')
     username = request.form['username']
     password = request.form['password']
-    registered_user = User.query.filter_by(username=username,password=password).first()
-    if registered_user is None:
+    registered_user = User.query.filter_by(username=username).first()
+    flash(registered_user.check_password(registered_user.password))
+    if registered_user and registered_user.check_password(registered_user.check_password):
+ 	login_user(registered_user)
+    	flash('Logged in successfully')
+    	return ('{%s,success}'%username)
+    else:
+   # if registered_user is None:
         flash('Username or Password is invalid' , 'error')
         return ('{%s,failure}'%username)
         return redirect(url_for('login'))
-    login_user(registered_user)
-    flash('Logged in successfully')
-    return ('{%s,success}'%username)
+   # login_user(registered_user)
+   # flash('Logged in successfully')
+   # return ('{%s,success}'%username)
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=7002,debug=True)
