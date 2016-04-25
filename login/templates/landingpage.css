@@ -1,0 +1,101 @@
+  body {
+        background-image:url(image.jpeg);
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+    
+#map {
+		position: bottom;
+        width: 500px;
+        height: 200px;
+        mix-blend-mode: color;
+        border-radius: 10px;
+        border-top: 13px;
+      }
+      
+.form-style-2{
+    float: center;
+    color: white;
+    max-width: 100px;
+    padding: 0px -130px 100px 300px;
+    mix-blend-mode: exclusion;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+.form-style-2-heading{
+    mix-blend-mode: exclusion;
+    text-align: right;
+    position: right;
+    font-weight: bold;
+    font-style: none;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: white;
+    padding-bottom: 3px;
+}
+
+.form-style-2 label{
+    display: block;
+    margin: 10px 0px 15px 0px;
+}
+
+.form-style-2 label > span{
+    width: 100px;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+.form-style-2 span.required{
+    color:red;
+}
+
+
+.form-style-2 input.input-field{
+    width: 150%;
+}
+
+.form-style-2 input.input-field{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    -moz-box-shadow: 1px 1px 4px #EBEBEB;
+    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    outline: none;
+}
+
+.form-style-2 .input-field:focus{
+    border: 1px solid #0C0;
+}
+
+.form-style-2 .textarea-field{
+    height:100px;
+    width: 55%;
+}
+.form-style-2 input[type=submit],
+.form-style-2 input[type=button]{
+    border: none;
+    padding: 8px 15px 8px 15px;
+    background: #FF8500;
+    color: #fff;
+    box-shadow: 1px 1px 4px #DADADA;
+    -moz-box-shadow: 1px 1px 4px #DADADA;
+    -webkit-box-shadow: 1px 1px 4px #DADADA;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.form-style-2 input[type=submit]:hover,
+.form-style-2 input[type=button]:hover{
+    background: #EA7B00;
+    color: #fff;
+}
