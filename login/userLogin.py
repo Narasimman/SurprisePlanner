@@ -25,7 +25,9 @@ class User(db.Model):
     username = db.Column('username', db.String(100))
     password = db.Column('password' , db.String(160))
     email = db.Column('email',db.String(100))
-    
+    firstname = db.Column('firstname',db.String(100)) 
+    middlename = db.Column('secondname',db.String(100))
+    lastname = db.Column('lastname',db.String(100))
     phoneNumber = db.Column('phoneNumber',db.Integer)
     registered_on = db.Column('registered_on' , db.DateTime)
  
@@ -33,6 +35,10 @@ class User(db.Model):
         self.username = username
         self.set_password(password)
         self.email = email
+	self.firstname = firstname
+	self.middlename = middlename
+	self.lastname = lastname
+	self.phoneNumber = phoneNumber
         self.registered_on = datetime.utcnow()
     
     def set_password(self, password):
@@ -55,6 +61,9 @@ class User(db.Model):
  
     def __repr__(self):
         return '<User %r>' % (self.username)
+ 
+class landing():
+
 
 @app.route('/register' , methods=['GET','POST'])
 def register():
@@ -86,6 +95,12 @@ def login():
    # login_user(registered_user)
    # flash('Logged in successfully')
    # return ('{%s,success}'%username)
+
+@app.route('/landing',methods=['GET','POST'])
+def landing():
+	if request.method == 'GET':
+		return render_template('landing.html')
+		
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=7002,debug=True)
