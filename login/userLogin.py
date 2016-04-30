@@ -4,10 +4,11 @@ from flask import Flask, session, request, flash, url_for, redirect, render_temp
 from flask.ext.login import LoginManager, login_user , logout_user , current_user , login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+import config
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
-app.secret_key = "super secret key"
+app.secret_key = config.APP_SECRET
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
