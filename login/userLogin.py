@@ -107,8 +107,8 @@ def login():
         return ('{"%s":"failure"}'%username)
         #return redirect(url_for('login'))
 
-@app.route('/landing',methods=['GET','POST'])
-def landing():
+@app.route('/landingpage',methods=['GET','POST'])
+def landingpage():
     if request.method == 'GET':
         return render_template('landingpage.html')
 		
