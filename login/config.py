@@ -1,4 +1,4 @@
-config = {
-	'APP_SECRET' : 'Super Secret Key'
+import os
 
-}
+WTF_CSRF_ENABLED = True
+SECRET_KEY = os.urandom(12)

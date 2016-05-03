@@ -7,8 +7,10 @@ from datetime import datetime
 import config
 
 app = Flask(__name__)
+app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
-app.secret_key = config.APP_SECRET
+#app.secret_key = "SECRET"
+
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
@@ -80,8 +82,8 @@ def register():
     db.session.commit()
     
     flash('User successfully registered')
-    #return redirect(url_for('login'))
-    return jsonify({ 'username': user.username }), 201, {'Location': url_for('login', id = user.id, _external = True)}
+    return redirect(url_for('login'))
+    #return jsonify({ 'username': user.username }), 201, {'Location': url_for('login', id = user.id, _external = True)}
 
 @app.route('/login',methods=['GET', 'POST'])
 def login():
@@ -93,12 +95,13 @@ def login():
     password = request.form['password']
 
     registered_user = User.query.filter_by(username=username).first()
-    flash(registered_user.check_password(registered_user.password))
+    flash(registered_user.check_password(password))
 
-    if registered_user and registered_user.check_password(registered_user.check_password):
+    if registered_user.check_password(password):
 	login_user(registered_user)
 	flash('Logged in successfully')
-	return ('{"%s":"success"}'%username)
+	return redirect(url_for('landingpage'))
+	#return ('{"%s":"success"}'%username)
     else:
         flash('Username or Password is invalid' , 'error')
         return ('{"%s":"failure"}'%username)
@@ -107,7 +110,7 @@ def login():
 @app.route('/landing',methods=['GET','POST'])
 def landing():
     if request.method == 'GET':
-        return render_template('landing.html')
+        return render_template('landingpage.html')
 		
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7002,debug=True)
