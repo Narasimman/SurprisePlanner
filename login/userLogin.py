@@ -9,7 +9,7 @@ import config
 app = Flask(__name__)
 app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
-#app.secret_key = "SECRET"
+app.secret_key = 'secret'
 
 db = SQLAlchemy(app)
 
@@ -21,24 +21,27 @@ login_manager.login_view = 'login'
 def load_user(id):
     return User.query.get(int(id))
 
+@app.before_request
+def before_request():
+    g.user = current_user
+
 class User(db.Model):
-    __tablename__ = "users"
-    id = db.Column('user_id', db.Integer, primary_key=True)
-    username = db.Column('username', db.String(32), index = True)
-    password = db.Column('password' , db.String(128))
-    email = db.Column('email',db.String(100))
-    firstname = db.Column('firstname',db.String(100)) 
-    middlename = db.Column('middlename',db.String(100))
-    lastname = db.Column('lastname',db.String(100))
+    __tablename__ = "UserInfo"
+    id = db.Column('user_id', db.Integer,primary_key=True)
+    username = db.Column('username', db.String(45),index=True)
+    password = db.Column('password' , db.String(160))
+    email = db.Column('email',db.String(45))
+    firstname = db.Column('firstname',db.String(45))
+    lastname = db.Column('lastname',db.String(45))
     phoneNumber = db.Column('phoneNumber',db.Integer)
     registered_on = db.Column('registered_on' , db.DateTime)
+    landings = db.relationship('landing', backref='User',lazy='dynamic')
  
     def __init__(self, username, password, email, firstname, lastname):
         self.username = username
         self.set_password(password)
         self.email = email
 	self.firstname = firstname
-	#self.middlename = middlename
 	self.lastname = lastname
 	#self.phoneNumber = phoneNumber
         self.registered_on = datetime.utcnow()
@@ -64,6 +67,23 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % (self.username)
  
+class landing(db.Model):
+    __tablename__ = "OrderRequest"
+    OrderID = db.Column('OrderID',db.Integer , primary_key=True)
+    UserInfo_username = db.Column(db.String(45), db.ForeignKey('UserInfo.username'))
+    StartTime = db.Column('StartTime' , db.DateTime)
+    EndTime = db.Column('EndTime' , db.DateTime)
+    Budget = db.Column('Budget',db.Integer)
+    Zip = db.Column('Zip',db.Integer)
+    ordered_on = db.Column('ordered_on' , db.DateTime)
+
+    def __init__(self , OrderID, Budget):
+        self.OrderID = OrderID
+        #self.StartTime = StartTime
+        #self.EndTime = EndTime
+        self.Budget = Budget
+        #self.Zip = Zip
+        self.ordered_on = datetime.utcnow()
 
 @app.route('/register' , methods=['GET', 'POST'])
 def register():
@@ -109,8 +129,14 @@ def login():
 
 @app.route('/landingpage',methods=['GET','POST'])
 def landingpage():
-    if request.method == 'GET':
-        return render_template('landingpage.html')
+        if request.method == 'GET':
+                return render_template('landingpage.html') 
+	order = landing(request.form['OrderID'],request.form['Budget'])
+	order.User = g.user
+        db.session.add(order)
+        db.session.commit()
+        flash('order successfully added')
+        return ('{%s,success}')
 		
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7002,debug=True)
