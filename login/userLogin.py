@@ -152,7 +152,7 @@ def landingpage():
 	
 	def defineParams(latitude, longitude):
 		params = {}
-		params["term"] = "pref"
+		params["term"] = pref
     		params["ll"] = "{},{}".format(str(latitude), str(longitude))
     		#params["radius_filter"] = "2000"
     		#params["sort"] = "2"
