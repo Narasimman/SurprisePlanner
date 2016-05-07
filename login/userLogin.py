@@ -6,6 +6,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 import config
 
+import time
+import rauth
+
+import pandas
+import simplejson as json
+
+import geocoder
+
 app = Flask(__name__)
 app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
@@ -75,14 +83,15 @@ class landing(db.Model):
     EndTime = db.Column('EndTime' , db.DateTime)
     Budget = db.Column('Budget',db.Integer)
     Zip = db.Column('Zip',db.Integer)
+    StartLocation = db.Column('StartLocation',db.String(45))
     ordered_on = db.Column('ordered_on' , db.DateTime)
 
-    def __init__(self , OrderID, Budget):
-        self.OrderID = OrderID
-        #self.StartTime = StartTime
+    def __init__(self ,StartTime, Budget, StartLocation):
+        self.StartTime = StartTime
         #self.EndTime = EndTime
+	self.StartLocation = StartLocation
         self.Budget = Budget
-        #self.Zip = Zip
+       # self.Zip = Zip
         self.ordered_on = datetime.utcnow()
 
 @app.route('/register' , methods=['GET', 'POST'])
@@ -131,12 +140,54 @@ def login():
 def landingpage():
         if request.method == 'GET':
                 return render_template('landingpage.html') 
-	order = landing(request.form['OrderID'],request.form['Budget'])
+	order = landing(request.form['StartTime'],request.form['Budget'],request.form['StartLocation'])
 	order.User = g.user
-        db.session.add(order)
+	loc = request.form['StartLocation']
+	db.session.add(order)
         db.session.commit()
         flash('order successfully added')
-        return ('{%s,success}')
-		
-if __name__ == '__main__':
+	
+	def defineParams(latitude, longitude):
+		params = {}
+		params["term"] = "hot dog"
+    		params["ll"] = "{},{}".format(str(latitude), str(longitude))
+    		params["radius_filter"] = "2000"
+    		params["sort"] = "2"
+    		params["limit"] = "1"
+
+    		return params
+
+	def getData(params):
+    	# setting up personal Yelp account
+    		with open("config_secret.json",'r') as json_file:
+        		json_data = json.load(json_file)
+    		session = rauth.OAuth1Session(
+        		consumer_key = json_data["consumer_key"]
+        		,consumer_secret = json_data["consumer_secret"]
+        		,access_token = json_data["token"]
+        		,access_token_secret = json_data["token_secret"])
+
+    		request = session.get("http://api.yelp.com/v2/search", params=params)
+
+    	# transforming the data in JSON format
+    		data = request.json()
+    		session.close()
+    		return data
+
+	def result():
+    		g = geocoder.google(loc)
+    		# locations = [(39.98,-82.98)]
+    		locations = [g.latlng]
+
+    		apiData = []
+    		for latitude, longitude in locations:
+        		params = defineParams(latitude, longitude)
+        		apiData.append(getData(params))
+        		time.sleep(1.0)
+
+    		return (json.dumps(apiData[0]["businesses"], sort_keys=True, indent=4 * ' '))
+	
+	return result()
+	 
+if __name__ == '__main__': 
     app.run(host='0.0.0.0', port=7002,debug=True)
