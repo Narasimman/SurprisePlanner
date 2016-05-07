@@ -84,13 +84,15 @@ class landing(db.Model):
     Budget = db.Column('Budget',db.Integer)
     Zip = db.Column('Zip',db.Integer)
     StartLocation = db.Column('StartLocation',db.String(45))
+    preference = db.Column('preference', db.String(45))
     ordered_on = db.Column('ordered_on' , db.DateTime)
 
-    def __init__(self ,StartTime, Budget, StartLocation):
+    def __init__(self ,StartTime, Budget, StartLocation, preference):
         self.StartTime = StartTime
         #self.EndTime = EndTime
 	self.StartLocation = StartLocation
         self.Budget = Budget
+	self.preference = preference
        # self.Zip = Zip
         self.ordered_on = datetime.utcnow()
 
@@ -140,19 +142,20 @@ def login():
 def landingpage():
         if request.method == 'GET':
                 return render_template('landingpage.html') 
-	order = landing(request.form['StartTime'],request.form['Budget'],request.form['StartLocation'])
+	order = landing(request.form['StartTime'],request.form['Budget'],request.form['StartLocation'],request.form['preference'])
 	order.User = g.user
 	loc = request.form['StartLocation']
+	pref = request.form['preference']
 	db.session.add(order)
         db.session.commit()
         flash('order successfully added')
 	
 	def defineParams(latitude, longitude):
 		params = {}
-		params["term"] = "hot dog"
+		params["term"] = "pref"
     		params["ll"] = "{},{}".format(str(latitude), str(longitude))
-    		params["radius_filter"] = "2000"
-    		params["sort"] = "2"
+    		#params["radius_filter"] = "2000"
+    		#params["sort"] = "2"
     		params["limit"] = "1"
 
     		return params
