@@ -5,7 +5,8 @@ from flask.ext.login import LoginManager, login_user , logout_user , current_use
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 import config
-
+from crossdomain import crossdomain
+from flask.ext.cors import CORS, cross_origin
 import time
 import rauth
 
@@ -19,19 +20,13 @@ app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
 app.secret_key = 'secret'
 
-db = SQLAlchemy(app)
+cors = CORS(app, resources={r"/login": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 
+db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
-
-@login_manager.user_loader
-def load_user(id):
-    return User.query.get(int(id))
-
-@app.before_request
-def before_request():
-    g.user = current_user
 
 class User(db.Model):
     __tablename__ = "UserInfo"
@@ -75,6 +70,15 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % (self.username)
  
+
+@login_manager.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
+@app.before_request
+def before_request():
+    g.user = current_user
+
 class landing(db.Model):
     __tablename__ = "OrderRequest"
     OrderID = db.Column('OrderID',db.Integer , primary_key=True)
@@ -104,10 +108,8 @@ def register():
     username  = request.form['username']
     password  = request.form['password']
     email     = request.form['email']
-    #firstname = request.form['firstname'] 
-    #lastname  = request.form['lastname']
-    firstname = ""
-    lastname = ""
+    firstname = request.form['firstname'] 
+    lastname  = request.form['lastname']
     user = User(username, password, email, firstname, lastname)
     db.session.add(user)
     db.session.commit()
@@ -117,6 +119,7 @@ def register():
     #return jsonify({ 'username': user.username }), 201, {'Location': url_for('login', id = user.id, _external = True)}
 
 @app.route('/login',methods=['GET', 'POST'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def login():
 
     if request.method == 'GET':
@@ -126,17 +129,19 @@ def login():
     password = request.form['password']
 
     registered_user = User.query.filter_by(username=username).first()
-    flash(registered_user.check_password(password))
+    if registered_user:
+      flash(registered_user.check_password(password))
 
-    if registered_user.check_password(password):
+      if registered_user.check_password(password):
 	login_user(registered_user)
 	flash('Logged in successfully')
-	return redirect(url_for('landingpage'))
-	#return ('{"%s":"success"}'%username)
-    else:
+	#return redirect(url_for('landingpage'))
+	return ('{"status":"success, %s"}'%username)
+      else:
         flash('Username or Password is invalid' , 'error')
         return ('{"%s":"failure"}'%username)
         #return redirect(url_for('login'))
+    return ('{"%s":"failure"}'%username)
 
 @app.route('/landingpage',methods=['GET','POST'])
 def landingpage():
@@ -161,36 +166,34 @@ def landingpage():
     		return params
 
 	def getData(params):
-    	# setting up personal Yelp account
-    		with open("config_secret.json",'r') as json_file:
-        		json_data = json.load(json_file)
-    		session = rauth.OAuth1Session(
-        		consumer_key = json_data["consumer_key"]
-        		,consumer_secret = json_data["consumer_secret"]
-        		,access_token = json_data["token"]
-        		,access_token_secret = json_data["token_secret"])
+	  # setting up personal Yelp account
+    	  with open("config_secret.json",'r') as json_file:
+            json_data = json.load(json_file)
+    	  session = rauth.OAuth1Session(
+        	consumer_key = json_data["consumer_key"]
+        	,consumer_secret = json_data["consumer_secret"]
+        	,access_token = json_data["token"]
+        	,access_token_secret = json_data["token_secret"])
 
-    		request = session.get("http://api.yelp.com/v2/search", params=params)
-
-    	# transforming the data in JSON format
-    		data = request.json()
-    		session.close()
-    		return data
+    	  request = session.get("http://api.yelp.com/v2/search", params=params)
+    	  # transforming the data in JSON format
+   	  data = request.json()
+    	  session.close()
+    	  return data
 
 	def result():
-    		g = geocoder.google(loc)
-    		# locations = [(39.98,-82.98)]
-    		locations = [g.latlng]
+    	  g = geocoder.google(loc)
+    	  # locations = [(39.98,-82.98)]
+    	  locations = [g.latlng]
 
-    		apiData = []
-    		for latitude, longitude in locations:
-        		params = defineParams(latitude, longitude)
-        		apiData.append(getData(params))
-        		time.sleep(1.0)
+    	  apiData = []
+    	  for latitude, longitude in locations:
+            params = defineParams(latitude, longitude)
+            apiData.append(getData(params))
+            time.sleep(1.0)
+    	  return (json.dumps(apiData[0]["businesses"], sort_keys=True, indent=4 * ' '))	
 
-    		return (json.dumps(apiData[0]["businesses"], sort_keys=True, indent=4 * ' '))
-	
 	return result()
-	 
+ 
 if __name__ == '__main__': 
     app.run(host='0.0.0.0', port=7002,debug=True)
