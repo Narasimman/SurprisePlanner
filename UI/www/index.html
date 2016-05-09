@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="stylesheet" type="text/css" href="css/signup.css">
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>	
+	<!-- SIGNUP PAGE -->
+	<div id="signup" data-role="page" data-title="Register">
+  		<div data-role="header">
+  			<div class="form-style-2-heading">Welcome to Surprise Date!!!</div>
+		</div>
+
+		<div role="main" class="ui-content">
+			<div data-role="navbar">
+			    <ul>
+			    	<li><a href="#signup" class="ui-btn-active" rel="external" data-transition="slide">Sign Up</a></li>
+			        <li><a href="#login" rel="external"  data-transition="slide">Log In</a></li>
+			    </ul>
+			</div>
+			      
+	      	<div id="signup-form">   
+	          <h1>Sign Up for Free</h1>		          
+	          <form action="/register" method="post" id="r-form">		          
+	          	<input id="firstname" name="firstname" type="text" required autocomplete="off" placeholder="First Name"/>
+	            <input id="lastname" name="lastname" type="text"required autocomplete="off" placeholder="Last Name"/>
+	            <input id="r-username" name="username" type="text"required autocomplete="off" placeholder="Username"/>
+	            <input id="email" name="email" type="email"required autocomplete="off" placeholder="Email Address"/>
+	            <input id="telephone" name="telephone" type="tel" required autocomplete="off" placeholder="Mobile Number"/>
+	            <input id="r-password" name="password" type="password" required autocomplete="off" placeholder="Password"/>
+	           	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Get Started
+	         	  	<input type="button" data-enhanced="true" id="signup-submit" value="Input value">
+			    </div>
+	          </form>
+		    </div>		    
+    	</div><!-- ui-content -->  
+    	
+    	<div data-role="footer"></div>    
+	</div> <!-- signup page -->
+	<!-- SIGNUP PAGE -->
+
+	<!-- LOGIN PAGE  -->
+	<div id="login" data-role="page" data-title="login">
+  		<div data-role="header">
+  			<div class="form-style-2-heading">Welcome to Surprise Date!!!</div>
+		</div>
+
+		<div role="main" class="ui-content">
+			<div data-role="navbar">
+			    <ul>
+			    	<li><a href="#signup" rel="external"  data-transition="slide">Sign Up</a></li>
+			        <li><a href="#login" class="ui-btn-active" rel="external"  data-transition="slide">Log In</a></li>
+			    </ul>
+			</div>
+			
+	      	<div id="login-form">   
+	          <h1>Login</h1>		          
+	          <form action="/login" method="post" id="l-form">		          
+	          	<input name="username" id="l-username" type="text" required autocomplete="off" placeholder="Username"/>
+	            <input name="password" id="l-password" type="password" required autocomplete="off" placeholder="Password"/>
+	          	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Login
+	         	  	<input type="button" data-enhanced="true" id="login-submit" value="Input value">
+			    </div>
+	          </form>
+		    </div>		    
+    	</div><!-- ui-content -->  
+    	
+    	<div data-role="footer"></div>    
+	</div> <!-- login page -->
+	<!-- LOGIN PAGE  -->
+
+	<!-- PLAN PAGE  -->
+	<div id="plan" data-role="page" data-title="Plan">
+  		<div data-role="header">
+  			<div class="form-style-2-heading">Welcome to Surprise Date!!!</div>
+		</div>
+
+		<div role="main" class="ui-content">
+		    <div id="plan-form">   
+	          <h1>Plan</h1>		          
+	          <form action="/plan" method="post" id="p-form">		          
+	          	<label for="startTime">Start Time <span class="required">*</span></label>
+				<input id="p-starttime" type="date" name="startTime" />
+
+				<label for="endTime">End Time <span class="required">*</span></label>
+				<input id="p-endtime" type="date" name="endTime" />
+
+	          	<label for="budget">Budget<span class="required">*</span></label>
+	          	<input id="p-budget" type="number" name="budget" />
+				
+				<label for="location">ZIP Code <span class="required">*</span></label>
+				<input id="p-location" type="number" name="location"/>
+
+				<label for="preference">Preference <span class="required">*</span></label>
+				<input id="p-pref" type="text" placeholder="indian" name="preference" />
+
+				<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Surprise Me!
+	         	  	<input type="button" data-enhanced="true" id="plan-submit" value="Plan">
+			    </div>				
+
+	          </form>
+		    </div>		    
+    	</div><!-- ui-content -->  
+    	
+    	<div data-role="footer"></div>    
+	</div> <!-- plan page -->
+	<!-- PLAN PAGE  -->
+
+	<!-- CONFIRMATION PAGE  -->
+	<div id="confirm" data-role="page" data-title="Confirmation">
+  		<div data-role="header">
+  			<div class="form-style-2-heading">Welcome to Surprise Date!!!</div>
+		</div>
+
+		<div role="main" class="ui-content">
+		    <div id="comfirm">   
+	          <h1>Your Plan is Scheduled</h1>	          
+		    </div>		    
+    	</div><!-- ui-content -->  
+    	
+    	<div data-role="footer"></div>    
+	</div> <!-- confirm page -->
+	<!-- CONFIRM PAGE  -->
+
+	<script type="text/javascript">
+
+		$( document ).bind( "mobileinit", function() {
+   			$.mobile.allowCrossDomainPages = true;
+   			$.support.cors = true;
+		});
+
+		$(document).on('pageinit', '#login', function(){  
+    	    $(document).on('click', '#login-submit', function() { // catch the form's submit event
+        	    if($('#l-username').val().length > 0 && $('#l-password').val().length > 0){
+                    $.ajax({url: 'http://websys3.stern.nyu.edu:7002/login',
+                        	data: $('#l-form').serialize(),
+                        	type: 'post',                   
+                        	async: 'true',
+                            dataType: 'json',
+                        	beforeSend: function() {
+                            	$.mobile.loading('show'); // This will show ajax spinner
+                        	},
+                        
+                        	complete: function() {
+                            	$.mobile.loading('hide'); // This will hide ajax spinner
+                        	},
+                        	
+                        	success: function (result) {
+	                            if(result.status && result.status == "success") {
+	                                $.mobile.changePage("#plan");                         
+	                            } else {
+	                                alert('Logon unsuccessful!'); 
+	                            }
+                        	},
+                        
+                        	error: function (request,error) {
+                            	alert('Network error has occurred please try again!');
+                        	}
+                    });                   
+            
+            	} else {
+                	alert('Please fill all necessary fields');
+            	}           
+        	    return false; // cancel original event to prevent form submitting
+        	});    
+		});
+
+		// Register
+		$(document).on('pageinit', '#signup', function(){  
+    	    $(document).on('click', '#signup-submit', function() { // catch the form's submit event
+        	    if($('#r-username').val().length > 0 && $('#r-password').val().length > 0
+        	    	&& $('#firstname').val().length > 0 && $('#lastname').val().length > 0
+        	    	&& $('#email').val().length > 0 && $('#telephone').val().length > 0){
+                    $.ajax({url: 'http://websys3.stern.nyu.edu:7002/register',
+                        	data: $('#r-form').serialize(),
+                        	type: 'post',                   
+                        	async: 'true',
+                            dataType: 'json',
+                        	beforeSend: function() {
+                            	$.mobile.loading('show'); // This will show ajax spinner
+                        	},
+                        
+                        	complete: function() {
+                            	$.mobile.loading('hide'); // This will hide ajax spinner
+                        	},
+                        	
+                        	success: function (result) {
+	                            if(result.status && result.status == "success") {
+	                                $.mobile.changePage("#plan");                         
+	                            } else {
+	                                alert('Registration unsuccessful!'); 
+	                            }
+                        	},
+                        
+                        	error: function (request,error) {
+                            	alert('Network error has occurred please try again!');
+                        	}
+                    });                   
+            
+            	} else {
+                	alert('Please fill all necessary fields');
+            	}           
+        	    return false; // cancel original event to prevent form submitting
+        	});    
+		});
+
+
+		// Plan
+		$(document).on('pageinit', '#plan', function(){  
+    	    $(document).on('click', '#plan-submit', function() { // catch the form's submit event
+        	    if($('#p-starttime').val().length > 0 && $('#p-endtime').val().length > 0
+        	    	&& $('#p-budget').val().length > 0 && $('#p-location').val().length > 0
+        	    	&& $('#p-pref').val().length > 0){
+                    $.ajax({url: 'http://websys3.stern.nyu.edu:7002/plan',
+                        	data: $('#p-form').serialize(),
+                        	type: 'post',                   
+                        	async: 'true',
+                            dataType: 'json',
+                        	beforeSend: function() {
+                            	$.mobile.loading('show'); // This will show ajax spinner
+                        	},
+                        
+                        	complete: function() {
+                            	$.mobile.loading('hide'); // This will hide ajax spinner
+                        	},
+                        	
+                        	success: function (result) {
+	                            if(result.status && result.status == "success") {
+	                                $.mobile.changePage("#confirm");                         
+	                            } else {
+	                                alert('Planning unsuccessful!'); 
+	                            }
+                        	},
+                        
+                        	error: function (request,error) {
+                            	alert('Network error has occurred please try again!');
+                        	}
+                    });                   
+            
+            	} else {
+                	alert('Please fill all necessary fields');
+            	}           
+        	    return false; // cancel original event to prevent form submitting
+        	});    
+		});
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.form-style-2-heading{
+    mix-blend-mode: exclusion;
+    text-align: center;
+    position: center;
+    font-weight: bold;
+    font-style: none;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 25px;
+    /*color: white;*/
+    padding-bottom: 3px;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+h1 {
+  text-align: center;
+}
+
+.required {
+  color: red;
+}
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
