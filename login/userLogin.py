@@ -20,7 +20,7 @@ app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
 app.secret_key = 'secret'
 
-cors = CORS(app, resources={r"/login": {"origins": "*"}})
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 db = SQLAlchemy(app)
@@ -101,6 +101,7 @@ class landing(db.Model):
         self.ordered_on = datetime.utcnow()
 
 @app.route('/register' , methods=['GET', 'POST'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def register():
     if request.method == 'GET':
         return render_template('register.html')
@@ -115,13 +116,12 @@ def register():
     db.session.commit()
     
     flash('User successfully registered')
-    return redirect(url_for('login'))
-    #return jsonify({ 'username': user.username }), 201, {'Location': url_for('login', id = user.id, _external = True)}
+    #return redirect(url_for('login'))
+    return jsonify({ 'username': user.username, 'status' : 'success' }), 201, {'Location': url_for('login', id = user.id, _external = True)}
 
 @app.route('/login',methods=['GET', 'POST'])
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def login():
-
     if request.method == 'GET':
         return render_template('login.html')
 
@@ -135,19 +135,19 @@ def login():
       if registered_user.check_password(password):
 	login_user(registered_user)
 	flash('Logged in successfully')
-	#return redirect(url_for('landingpage'))
-	return ('{"status":"success, %s"}'%username)
+	return jsonify({'status':'success'}), 201
       else:
         flash('Username or Password is invalid' , 'error')
-        return ('{"%s":"failure"}'%username)
-        #return redirect(url_for('login'))
-    return ('{"%s":"failure"}'%username)
+        return jsonify({"status":"failure", "message": "invalid password"}), 201
+    return jsonify({"status":"failure", "message": "invalid username"}), 201
 
-@app.route('/landingpage',methods=['GET','POST'])
+@app.route('/plan',methods=['GET','POST'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def landingpage():
         if request.method == 'GET':
-                return render_template('landingpage.html') 
+          return render_template('landingpage.html') 
 	order = landing(request.form['StartTime'],request.form['Budget'],request.form['StartLocation'],request.form['preference'])
+	
 	order.User = g.user
 	loc = request.form['StartLocation']
 	pref = request.form['preference']
@@ -156,14 +156,14 @@ def landingpage():
         flash('order successfully added')
 	
 	def defineParams(latitude, longitude):
-		params = {}
-		params["term"] = pref
-    		params["ll"] = "{},{}".format(str(latitude), str(longitude))
-    		#params["radius_filter"] = "2000"
-    		#params["sort"] = "2"
-    		params["limit"] = "1"
+	  params = {}
+	  params["term"] = pref
+    	  params["ll"] = "{},{}".format(str(latitude), str(longitude))
+    	  #params["radius_filter"] = "2000"
+    	  #params["sort"] = "2"
+    	  params["limit"] = "1"
 
-    		return params
+    	  return params
 
 	def getData(params):
 	  # setting up personal Yelp account
