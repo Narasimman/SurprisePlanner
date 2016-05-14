@@ -562,3 +562,91 @@
 2016-05-14 14:06:44,481 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
 2016-05-14 14:06:44,481 CORS have been already evaluated, skipping
 2016-05-14 14:06:44,483 69.141.40.22 - - [14/May/2016 14:06:44] "POST /plan HTTP/1.1" 200 -
+2016-05-14 14:16:20,332 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:16:20,344  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:16:20,348  * Restarting with stat
+2016-05-14 14:16:20,701 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:16:39,239 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:16:39,319 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=0 HTTP/1.1" 200 None
+2016-05-14 14:16:39,323 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:16:39,423 "GET /v2/search?term=indian&oauth_nonce=000a085ed69128fcfdae9890adbc746700c2a68b&oauth_timestamp=1463249799&ll=44.200797%2C24.5022981&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=e9ONd%2FLo2wyPZJ%2Bp2IUzSkYpX%2FY%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 400 89
+2016-05-14 14:16:40,425 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:16:40,426 CORS request received with 'Origin' null
+2016-05-14 14:16:40,426 Given origin matches set of allowed origins
+2016-05-14 14:16:40,426 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:16:40,426 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:16:40,426 CORS have been already evaluated, skipping
+2016-05-14 14:16:40,428 69.141.40.22 - - [14/May/2016 14:16:40] "POST /plan HTTP/1.1" 200 -
+2016-05-14 14:16:49,811 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:16:49,854 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=10012 HTTP/1.1" 200 None
+2016-05-14 14:16:49,857 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:16:50,091 "GET /v2/search?term=indian&oauth_nonce=65e894de239267e1b71106f3feee596f0a04204d&oauth_timestamp=1463249809&ll=40.7250632%2C-73.9976946&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=S5kJS7fA6EO4L%2FL7g7BJ63XUuQk%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 200 None
+2016-05-14 14:16:51,093 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:16:51,094 CORS request received with 'Origin' null
+2016-05-14 14:16:51,094 Given origin matches set of allowed origins
+2016-05-14 14:16:51,094 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:16:51,094 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:16:51,094 CORS have been already evaluated, skipping
+2016-05-14 14:16:51,095 69.141.40.22 - - [14/May/2016 14:16:51] "POST /plan HTTP/1.1" 200 -
+2016-05-14 14:16:57,344 Request to '/login' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:16:57,344 CORS request received with 'Origin' null
+2016-05-14 14:16:57,344 Given origin matches set of allowed origins
+2016-05-14 14:16:57,344 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:16:57,345 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:16:57,345 CORS have been already evaluated, skipping
+2016-05-14 14:16:57,346 69.141.40.22 - - [14/May/2016 14:16:57] "POST /login HTTP/1.1" 201 -
+2016-05-14 14:24:05,790 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:24:05,796  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:24:05,800  * Restarting with stat
+2016-05-14 14:24:06,163 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:24:13,254 69.141.40.22 - - [14/May/2016 14:24:13] "POST /plan HTTP/1.1" 500 -
+2016-05-14 14:24:18,239 69.141.40.22 - - [14/May/2016 14:24:18] "POST /plan HTTP/1.1" 500 -
+2016-05-14 14:24:57,876 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:24:57,882  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:24:57,886  * Restarting with stat
+2016-05-14 14:24:58,244 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:25:02,209 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:25:02,258 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=10012 HTTP/1.1" 200 None
+2016-05-14 14:25:02,262 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:25:02,698 "GET /v2/search?term=indian&oauth_nonce=0d6455932cd03f3a295e8509d685cf6cf740b593&oauth_timestamp=1463250302&ll=40.7250632%2C-73.9976946&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=EdTfyK%2ByI%2BXAmDOZGrwjhe45b0E%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 200 None
+2016-05-14 14:25:03,700 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:25:03,700 CORS request received with 'Origin' null
+2016-05-14 14:25:03,700 Given origin matches set of allowed origins
+2016-05-14 14:25:03,700 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:25:03,700 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:25:03,701 CORS have been already evaluated, skipping
+2016-05-14 14:25:03,702 69.141.40.22 - - [14/May/2016 14:25:03] "POST /plan HTTP/1.1" 200 -
+2016-05-14 14:28:27,598 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:28:27,605  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:28:27,609  * Restarting with stat
+2016-05-14 14:28:27,903 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:28:32,193 69.141.40.22 - - [14/May/2016 14:28:32] "POST /plan HTTP/1.1" 500 -
+2016-05-14 14:28:58,130 69.141.40.22 - - [14/May/2016 14:28:58] "POST /login HTTP/1.1" 500 -
+2016-05-14 14:29:07,771 69.141.40.22 - - [14/May/2016 14:29:07] "POST /login HTTP/1.1" 500 -
+2016-05-14 14:30:24,139 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:30:24,146  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:30:24,150  * Restarting with stat
+2016-05-14 14:30:24,448 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:30:28,421 69.141.40.22 - - [14/May/2016 14:30:28] "POST /login HTTP/1.1" 500 -
+2016-05-14 14:33:03,104 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:33:03,111  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:33:03,115  * Restarting with stat
+2016-05-14 14:33:03,411 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:33:06,244 Request to '/login' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:33:06,244 CORS request received with 'Origin' null
+2016-05-14 14:33:06,245 Given origin matches set of allowed origins
+2016-05-14 14:33:06,245 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:33:06,245 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:33:06,245 CORS have been already evaluated, skipping
+2016-05-14 14:33:06,246 69.141.40.22 - - [14/May/2016 14:33:06] "POST /login HTTP/1.1" 201 -
+2016-05-14 14:33:13,867 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:33:13,909 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=10012 HTTP/1.1" 200 None
+2016-05-14 14:33:13,913 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:33:14,190 "GET /v2/search?term=indian&oauth_nonce=743e64f0e4acf67ddebcf0218fb373f8b4817db6&oauth_timestamp=1463250793&ll=40.7250632%2C-73.9976946&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=gGs9NKWbCFroAce9nDbltXA5gKk%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 200 None
+2016-05-14 14:33:15,192 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:33:15,192 CORS request received with 'Origin' null
+2016-05-14 14:33:15,192 Given origin matches set of allowed origins
+2016-05-14 14:33:15,192 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:33:15,192 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:33:15,192 CORS have been already evaluated, skipping
+2016-05-14 14:33:15,193 69.141.40.22 - - [14/May/2016 14:33:15] "POST /plan HTTP/1.1" 200 -
