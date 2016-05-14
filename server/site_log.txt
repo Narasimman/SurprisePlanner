@@ -159,3 +159,406 @@
 2016-05-13 01:43:34,446 CORS have been already evaluated, skipping
 2016-05-13 01:43:34,447 50.153.127.168 - - [13/May/2016 01:43:34] "POST /login HTTP/1.1" 201 -
 2016-05-13 01:43:37,763 50.153.127.168 - - [13/May/2016 01:43:37] "POST /plan HTTP/1.1" 500 -
+2016-05-14 13:27:28,282 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:27:28,288 Enabling <function register at 0x1f6a5aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:27:28,289 Enabling <function login at 0x1f6a59b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:27:28,289 Enabling <function landingpage at 0x1f6a58c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:27:28,295  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:27:28,299  * Restarting with stat
+2016-05-14 13:27:28,659 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:27:28,665 Enabling <function register at 0x1f9a8aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:27:28,666 Enabling <function login at 0x1f9a89b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:27:28,666 Enabling <function landingpage at 0x1f9a88c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:28:16,444 50.153.125.186 - - [14/May/2016 13:28:16] "GET /login HTTP/1.1" 500 -
+2016-05-14 13:28:22,896 50.153.125.186 - - [14/May/2016 13:28:22] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-14 13:28:24,656 50.153.125.186 - - [14/May/2016 13:28:24] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-14 13:28:24,656 50.153.125.186 - - [14/May/2016 13:28:24] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-14 13:28:25,069 50.153.125.186 - - [14/May/2016 13:28:25] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-14 13:28:26,010 50.153.125.186 - - [14/May/2016 13:28:26] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-14 13:28:26,044 50.153.125.186 - - [14/May/2016 13:28:26] "GET /login?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-14 13:28:27,358 50.153.125.186 - - [14/May/2016 13:28:27] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-14 13:32:01,793 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:32:01,799 Enabling <function register at 0x96ccaa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:32:01,800 Enabling <function login at 0x96cc9b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:32:01,800 Enabling <function landingpage at 0x96cc8c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:32:01,806  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:32:01,810  * Restarting with stat
+2016-05-14 13:32:02,167 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:32:02,173 Enabling <function register at 0xe514aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:32:02,174 Enabling <function login at 0xe5149b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:32:02,174 Enabling <function landingpage at 0xe5148c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:32:12,732 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:12,732 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:12,732 Request to '/login' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:12,732 CORS have been already evaluated, skipping
+2016-05-14 13:32:12,733 Request to '/login' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:12,733 CORS have been already evaluated, skipping
+2016-05-14 13:32:12,734 69.141.40.22 - - [14/May/2016 13:32:12] "GET /login HTTP/1.1" 200 -
+2016-05-14 13:32:25,749 404 Error
+2016-05-14 13:32:25,749 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:25,750 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:25,750 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:25,750 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:25,750 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:25,750 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:25,750 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:25,750 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:25,750 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:25,751 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:25,751 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:25,751 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:25,752 69.141.40.22 - - [14/May/2016 13:32:25] "GET /logincss.css HTTP/1.1" 200 -
+2016-05-14 13:32:26,165 404 Error
+2016-05-14 13:32:26,165 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:26,165 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:26,165 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:26,165 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:26,165 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:26,165 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:26,166 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:26,166 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:26,166 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:26,166 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:26,166 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:26,166 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:26,167 69.141.40.22 - - [14/May/2016 13:32:26] "GET /favicon.ico HTTP/1.1" 200 -
+2016-05-14 13:32:37,584 404 Error
+2016-05-14 13:32:37,584 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:37,584 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:37,584 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:37,584 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:37,584 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:37,585 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:37,585 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:37,585 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:37,585 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:37,585 Request to '/logincss.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:32:37,585 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:32:37,585 Settings CORS headers: MultiDict([])
+2016-05-14 13:32:37,587 69.141.40.22 - - [14/May/2016 13:32:37] "GET /logincss.css HTTP/1.1" 200 -
+2016-05-14 13:33:06,656 69.141.40.22 - - [14/May/2016 13:33:06] "POST /login HTTP/1.1" 500 -
+2016-05-14 13:33:07,548 69.141.40.22 - - [14/May/2016 13:33:07] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-14 13:33:09,233 69.141.40.22 - - [14/May/2016 13:33:09] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-14 13:33:09,954 69.141.40.22 - - [14/May/2016 13:33:09] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-14 13:33:10,353 69.141.40.22 - - [14/May/2016 13:33:10] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-14 13:33:14,322 69.141.40.22 - - [14/May/2016 13:33:14] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-14 13:33:14,322 69.141.40.22 - - [14/May/2016 13:33:14] "GET /login?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-14 13:35:06,300 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:35:06,306 Enabling <function register at 0x2082baa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:35:06,307 Enabling <function login at 0x2082b9b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:35:06,307 Enabling <function landingpage at 0x2082b8c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:35:06,315  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:35:06,320  * Restarting with stat
+2016-05-14 13:35:06,674 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:35:06,681 Enabling <function register at 0x1ca29aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:35:06,681 Enabling <function login at 0x1ca299b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:35:06,681 Enabling <function landingpage at 0x1ca298c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:35:13,395 69.141.40.22 - - [14/May/2016 13:35:13] "POST /login HTTP/1.1" 500 -
+2016-05-14 13:35:14,556 69.141.40.22 - - [14/May/2016 13:35:14] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-14 13:35:20,747 404 Error
+2016-05-14 13:35:20,748 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:35:20,748 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:35:20,748 Settings CORS headers: MultiDict([])
+2016-05-14 13:35:20,748 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:35:20,748 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:35:20,748 Settings CORS headers: MultiDict([])
+2016-05-14 13:35:20,749 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:35:20,749 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:35:20,749 Settings CORS headers: MultiDict([])
+2016-05-14 13:35:20,749 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:35:20,749 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:35:20,749 Settings CORS headers: MultiDict([])
+2016-05-14 13:35:20,750 69.141.40.22 - - [14/May/2016 13:35:20] "GET /favicon.ico HTTP/1.1" 200 -
+2016-05-14 13:35:20,751 69.141.40.22 - - [14/May/2016 13:35:20] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-14 13:35:21,355 69.141.40.22 - - [14/May/2016 13:35:21] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-14 13:35:25,840 69.141.40.22 - - [14/May/2016 13:35:25] "POST /login HTTP/1.1" 500 -
+2016-05-14 13:35:26,543 69.141.40.22 - - [14/May/2016 13:35:26] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-14 13:35:26,723 69.141.40.22 - - [14/May/2016 13:35:26] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-14 13:35:27,056 69.141.40.22 - - [14/May/2016 13:35:27] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-14 13:35:29,277 69.141.40.22 - - [14/May/2016 13:35:29] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-14 13:35:30,508 69.141.40.22 - - [14/May/2016 13:35:30] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-14 13:35:30,509 69.141.40.22 - - [14/May/2016 13:35:30] "GET /login?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-14 13:36:59,276 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:36:59,282 Enabling <function register at 0x8244aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:36:59,282 Enabling <function login at 0x82449b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:36:59,282 Enabling <function landingpage at 0x82448c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:36:59,288  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:36:59,292  * Restarting with stat
+2016-05-14 13:36:59,644 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:36:59,650 Enabling <function register at 0x5558aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:36:59,650 Enabling <function login at 0x55589b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:36:59,650 Enabling <function landingpage at 0x55588c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:37:01,248 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:01,248 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:01,248 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:01,248 CORS have been already evaluated, skipping
+2016-05-14 13:37:01,248 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:01,248 CORS have been already evaluated, skipping
+2016-05-14 13:37:01,250 69.141.40.22 - - [14/May/2016 13:37:01] "GET /plan HTTP/1.1" 200 -
+2016-05-14 13:37:02,782 404 Error
+2016-05-14 13:37:02,782 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,782 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,782 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,783 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,783 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,783 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,783 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,783 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,783 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,783 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,783 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,784 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,785 69.141.40.22 - - [14/May/2016 13:37:02] "GET /favicon.ico HTTP/1.1" 200 -
+2016-05-14 13:37:02,787 404 Error
+2016-05-14 13:37:02,788 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,788 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,788 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,788 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,788 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,788 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,788 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,789 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,789 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,789 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:02,789 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:02,789 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:02,790 69.141.40.22 - - [14/May/2016 13:37:02] "GET /landingpage.css HTTP/1.1" 200 -
+2016-05-14 13:37:10,172 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:10,172 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:10,172 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:10,172 CORS have been already evaluated, skipping
+2016-05-14 13:37:10,172 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:10,172 CORS have been already evaluated, skipping
+2016-05-14 13:37:10,173 69.141.40.22 - - [14/May/2016 13:37:10] "GET /plan HTTP/1.1" 200 -
+2016-05-14 13:37:11,613 404 Error
+2016-05-14 13:37:11,613 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:11,613 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:11,613 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:11,614 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:11,614 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:11,614 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:11,614 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:11,614 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:11,614 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:11,614 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:11,614 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:11,615 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:11,616 69.141.40.22 - - [14/May/2016 13:37:11] "GET /landingpage.css HTTP/1.1" 200 -
+2016-05-14 13:37:13,694 404 Error
+2016-05-14 13:37:13,695 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:13,695 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:13,695 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:13,695 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:13,695 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:13,695 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:13,695 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:13,695 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:13,696 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:13,696 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:13,696 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:13,696 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:13,697 69.141.40.22 - - [14/May/2016 13:37:13] "GET /favicon.ico HTTP/1.1" 200 -
+2016-05-14 13:37:18,469 404 Error
+2016-05-14 13:37:18,469 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:18,469 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:18,469 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:18,469 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:18,469 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:18,470 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:18,470 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:18,470 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:18,470 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:18,470 Request to '/landingpage.css' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:18,470 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:18,470 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:18,471 69.141.40.22 - - [14/May/2016 13:37:18] "GET /landingpage.css HTTP/1.1" 200 -
+2016-05-14 13:37:35,302 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:35,302 CORS request received with 'Origin' http://websys3.stern.nyu.edu:7002
+2016-05-14 13:37:35,302 Given origin matches set of allowed origins
+2016-05-14 13:37:35,302 Request from Origin:http://websys3.stern.nyu.edu:7002, setting Access-Control-Allow-Origin:http://websys3.stern.nyu.edu:7002
+2016-05-14 13:37:35,302 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'http://websys3.stern.nyu.edu:7002')])
+2016-05-14 13:37:35,303 CORS have been already evaluated, skipping
+2016-05-14 13:37:35,303 CORS have been already evaluated, skipping
+2016-05-14 13:37:35,303 CORS have been already evaluated, skipping
+2016-05-14 13:37:35,304 69.141.40.22 - - [14/May/2016 13:37:35] "POST /plan HTTP/1.1" 400 -
+2016-05-14 13:37:35,668 404 Error
+2016-05-14 13:37:35,669 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:35,669 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:35,669 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:35,669 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:35,669 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:35,669 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:35,669 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:35,669 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:35,669 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:35,670 Request to '/favicon.ico' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': '/*', 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 13:37:35,670 'Origin' header was not set, which means CORS was not requested, skipping
+2016-05-14 13:37:35,670 Settings CORS headers: MultiDict([])
+2016-05-14 13:37:35,671 69.141.40.22 - - [14/May/2016 13:37:35] "GET /favicon.ico HTTP/1.1" 200 -
+2016-05-14 13:42:29,523 69.141.40.22 - - [14/May/2016 13:42:29] "POST /login HTTP/1.1" 500 -
+2016-05-14 13:42:48,830 69.141.40.22 - - [14/May/2016 13:42:48] "POST /login HTTP/1.1" 500 -
+2016-05-14 13:43:15,238 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:43:15,244 Enabling <function register at 0xec34aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:43:15,244 Enabling <function login at 0xec349b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:43:15,245 Enabling <function landingpage at 0xec348c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:43:15,250  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:43:15,255  * Restarting with stat
+2016-05-14 13:43:15,611 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:43:15,617 Enabling <function register at 0x20fd3aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:43:15,617 Enabling <function login at 0x20fd39b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:43:15,617 Enabling <function landingpage at 0x20fd38c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:43:17,772 CORS request received with 'Origin' null
+2016-05-14 13:43:17,772 Given origin matches set of allowed origins
+2016-05-14 13:43:17,773 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:43:17,773 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:43:17,773 CORS have been already evaluated, skipping
+2016-05-14 13:43:17,773 CORS have been already evaluated, skipping
+2016-05-14 13:43:17,774 69.141.40.22 - - [14/May/2016 13:43:17] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:44:05,521 69.141.40.22 - - [14/May/2016 13:44:05] "POST /plan HTTP/1.1" 500 -
+2016-05-14 13:45:36,300 CORS request received with 'Origin' null
+2016-05-14 13:45:36,300 Given origin matches set of allowed origins
+2016-05-14 13:45:36,300 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:45:36,300 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:45:36,301 CORS have been already evaluated, skipping
+2016-05-14 13:45:36,301 CORS have been already evaluated, skipping
+2016-05-14 13:45:36,302 69.141.40.22 - - [14/May/2016 13:45:36] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:45:49,259 CORS request received with 'Origin' null
+2016-05-14 13:45:49,260 Given origin matches set of allowed origins
+2016-05-14 13:45:49,260 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:45:49,260 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:45:49,260 CORS have been already evaluated, skipping
+2016-05-14 13:45:49,260 CORS have been already evaluated, skipping
+2016-05-14 13:45:49,262 69.141.40.22 - - [14/May/2016 13:45:49] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:46:42,082 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:46:42,088 Enabling <function register at 0xfa24aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:46:42,088 Enabling <function login at 0xfa249b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:46:42,089 Enabling <function landingpage at 0xfa248c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:46:42,094  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:46:42,099  * Restarting with stat
+2016-05-14 13:46:42,452 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:46:42,458 Enabling <function register at 0x18956aa0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:46:42,458 Enabling <function login at 0x189569b0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:46:42,458 Enabling <function landingpage at 0x189568c0> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:46:46,429 CORS request received with 'Origin' null
+2016-05-14 13:46:46,429 Given origin matches set of allowed origins
+2016-05-14 13:46:46,429 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:46:46,429 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:46:46,429 CORS have been already evaluated, skipping
+2016-05-14 13:46:46,430 CORS have been already evaluated, skipping
+2016-05-14 13:46:46,431 69.141.40.22 - - [14/May/2016 13:46:46] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:47:34,025 CORS request received with 'Origin' null
+2016-05-14 13:47:34,025 Given origin matches set of allowed origins
+2016-05-14 13:47:34,025 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:47:34,025 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:47:34,026 CORS have been already evaluated, skipping
+2016-05-14 13:47:34,026 CORS have been already evaluated, skipping
+2016-05-14 13:47:34,027 69.141.40.22 - - [14/May/2016 13:47:34] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:54:37,509 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:54:37,516 Enabling <function register at 0x144f6e60> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:54:37,516 Enabling <function login at 0x144f6d70> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:54:37,516 Enabling <function landingpage at 0x144f6c80> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:54:37,522  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:54:37,526  * Restarting with stat
+2016-05-14 13:54:37,884 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:54:37,890 Enabling <function register at 0xa1dae60> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:54:37,891 Enabling <function login at 0xa1dad70> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:54:37,891 Enabling <function landingpage at 0xa1dac80> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:54:42,765 CORS request received with 'Origin' null
+2016-05-14 13:54:42,765 Given origin matches set of allowed origins
+2016-05-14 13:54:42,765 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:54:42,765 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:54:42,766 CORS have been already evaluated, skipping
+2016-05-14 13:54:42,766 CORS have been already evaluated, skipping
+2016-05-14 13:54:42,768 69.141.40.22 - - [14/May/2016 13:54:42] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:56:31,926 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:56:31,932 Enabling <function register at 0xc3c1e60> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:56:31,933 Enabling <function login at 0xc3c1d70> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:56:31,933 Enabling <function landingpage at 0xc3c1cf8> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:56:31,938  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:56:31,942  * Restarting with stat
+2016-05-14 13:56:32,299 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': False, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:56:32,305 Enabling <function register at 0x1fdfee60> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:56:32,306 Enabling <function login at 0x1fdfed70> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:56:32,306 Enabling <function landingpage at 0x1fdfecf8> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:56:39,535 CORS request received with 'Origin' null
+2016-05-14 13:56:39,535 Given origin matches set of allowed origins
+2016-05-14 13:56:39,535 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:56:39,536 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:56:39,536 CORS have been already evaluated, skipping
+2016-05-14 13:56:39,536 CORS have been already evaluated, skipping
+2016-05-14 13:56:39,537 69.141.40.22 - - [14/May/2016 13:56:39] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:59:02,680 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:59:02,686 Enabling <function register at 0x1160ae60> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:59:02,686 Enabling <function login at 0x1160ad70> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:59:02,686 Enabling <function landingpage at 0x1160acf8> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:59:02,692  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 13:59:02,696  * Restarting with stat
+2016-05-14 13:59:03,061 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 13:59:03,067 Enabling <function register at 0xbb90e60> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization']}
+2016-05-14 13:59:03,068 Enabling <function login at 0xbb90d70> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:59:03,068 Enabling <function landingpage at 0xbb90cf8> for cross_origin using options:{'origin': '*', 'headers': ['Content-Type', 'Authorization', 'Access-Control-Allow-Credentials']}
+2016-05-14 13:59:07,198 CORS request received with 'Origin' null
+2016-05-14 13:59:07,198 Given origin matches set of allowed origins
+2016-05-14 13:59:07,198 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:59:07,198 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:59:07,199 CORS have been already evaluated, skipping
+2016-05-14 13:59:07,199 CORS have been already evaluated, skipping
+2016-05-14 13:59:07,200 69.141.40.22 - - [14/May/2016 13:59:07] "POST /login HTTP/1.1" 201 -
+2016-05-14 13:59:11,742 CORS request received with 'Origin' null
+2016-05-14 13:59:11,742 Given origin matches set of allowed origins
+2016-05-14 13:59:11,742 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 13:59:11,742 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null')])
+2016-05-14 13:59:11,743 CORS have been already evaluated, skipping
+2016-05-14 13:59:11,743 CORS have been already evaluated, skipping
+2016-05-14 13:59:11,744 69.141.40.22 - - [14/May/2016 13:59:11] "POST /login HTTP/1.1" 201 -
+2016-05-14 14:01:30,886 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:01:30,898  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:01:30,902  * Restarting with stat
+2016-05-14 14:01:31,259 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:01:36,257 Request to '/login' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:01:36,257 CORS request received with 'Origin' null
+2016-05-14 14:01:36,257 Given origin matches set of allowed origins
+2016-05-14 14:01:36,258 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:01:36,258 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:01:36,258 CORS have been already evaluated, skipping
+2016-05-14 14:01:36,259 69.141.40.22 - - [14/May/2016 14:01:36] "POST /login HTTP/1.1" 201 -
+2016-05-14 14:02:01,102 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:02:01,159 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=1 HTTP/1.1" 200 None
+2016-05-14 14:02:01,163 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:02:01,292 "GET /v2/search?term=indian&oauth_nonce=f52160065d66ed919c1c540260d6751563177dff&oauth_timestamp=1463248921&ll=33.0241101%2C39.5865834&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=PQPZPjHeb9zV5OWvm%2BW3TDCNOyw%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 400 89
+2016-05-14 14:02:02,302 69.141.40.22 - - [14/May/2016 14:02:02] "POST /plan HTTP/1.1" 500 -
+2016-05-14 14:03:04,464 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:03:04,476  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:03:04,480  * Restarting with stat
+2016-05-14 14:03:04,836 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:03:10,269 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:03:10,316 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=1 HTTP/1.1" 200 None
+2016-05-14 14:03:10,320 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:03:10,411 "GET /v2/search?term=indian&oauth_nonce=08567e10612b7c9133e629e8b32bef9c8b15f88f&oauth_timestamp=1463248990&ll=33.0241101%2C39.5865834&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=5cXVWfGakMxOzg2CCee3gFKCxls%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 400 89
+2016-05-14 14:03:11,420 69.141.40.22 - - [14/May/2016 14:03:11] "POST /plan HTTP/1.1" 500 -
+2016-05-14 14:03:31,096 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:03:31,155 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=10012 HTTP/1.1" 200 None
+2016-05-14 14:03:31,159 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:03:31,430 "GET /v2/search?term=indian&oauth_nonce=3f98d96059e31337de180916b204f5208adcdc4c&oauth_timestamp=1463249011&ll=40.7250632%2C-73.9976946&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=P%2BB4INzN4F49J99HIUTqzbMAaEo%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 200 None
+2016-05-14 14:03:32,434 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:03:32,434 CORS request received with 'Origin' null
+2016-05-14 14:03:32,434 Given origin matches set of allowed origins
+2016-05-14 14:03:32,434 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:03:32,435 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:03:32,435 CORS have been already evaluated, skipping
+2016-05-14 14:03:32,436 69.141.40.22 - - [14/May/2016 14:03:32] "POST /plan HTTP/1.1" 200 -
+2016-05-14 14:06:23,734 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:06:23,746  * Running on http://0.0.0.0:7002/ (Press CTRL+C to quit)
+2016-05-14 14:06:23,750  * Restarting with stat
+2016-05-14 14:06:24,172 Configuring CORS with resources: {'/*': {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}}
+2016-05-14 14:06:43,275 Starting new HTTPS connection (1): maps.googleapis.com
+2016-05-14 14:06:43,380 "GET /maps/api/geocode/json?components=&language=&region=&bounds=&address=0 HTTP/1.1" 200 None
+2016-05-14 14:06:43,385 Starting new HTTP connection (1): api.yelp.com
+2016-05-14 14:06:43,479 "GET /v2/search?term=indian&oauth_nonce=2b2c3610dedfb28011d399488bbcf0109c66b889&oauth_timestamp=1463249203&ll=44.200797%2C24.5022981&oauth_signature_method=HMAC-SHA1&oauth_version=1.0&limit=1&oauth_signature=oe7P3cyCQgPzgE7CFKcZYc79ijo%3D&oauth_token=EVO47Q9iqnKaOApwjheB9CvBtLJW7aQb&oauth_consumer_key=nSFM2-qplUOzYLyRdvYg_g HTTP/1.1" 400 89
+2016-05-14 14:06:44,481 Request to '/plan' matches CORS resource '/*'. Using options: {'automatic_options': True, 'allow_headers': ['.*'], 'send_wildcard': False, 'intercept_exceptions': True, 'origins': ['.*'], 'vary_header': True, 'supports_credentials': True, 'resources': {'/*': {'origins': '*'}}, 'methods': 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT'}
+2016-05-14 14:06:44,481 CORS request received with 'Origin' null
+2016-05-14 14:06:44,481 Given origin matches set of allowed origins
+2016-05-14 14:06:44,481 Request from Origin:null, setting Access-Control-Allow-Origin:null
+2016-05-14 14:06:44,481 Settings CORS headers: MultiDict([('Access-Control-Allow-Origin', u'null'), ('Access-Control-Allow-Credentials', 'true')])
+2016-05-14 14:06:44,481 CORS have been already evaluated, skipping
+2016-05-14 14:06:44,483 69.141.40.22 - - [14/May/2016 14:06:44] "POST /plan HTTP/1.1" 200 -

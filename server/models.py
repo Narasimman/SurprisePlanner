@@ -5,7 +5,6 @@ from flask.ext.login import LoginManager, login_user , logout_user , current_use
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 import config
-from crossdomain import crossdomain
 from flask.ext.cors import CORS, cross_origin
 import time
 import rauth
@@ -20,7 +19,7 @@ import geocoder
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
 app.secret_key = 'secret'
 
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 login_manager = LoginManager()
@@ -72,13 +71,12 @@ class User(db.Model):
 
 @login_manager.user_loader
 def load_user(uid):
-    return User.get(uid)
+    return User.query.get(uid)
 
 @app.before_request
 def before_request():
     print "before request"
     print current_user
-    #g.user = current_user
 
 def get_current_user():
   return current_user
@@ -105,7 +103,6 @@ class landing(db.Model):
         self.ordered_on = datetime.utcnow()
 
 @app.route('/register' , methods=['GET', 'POST'])
-@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def register():
     if request.method == 'GET':
         return render_template('register.html')
@@ -117,19 +114,15 @@ def register():
     lastname  = request.form['lastname']
     user = User(username, password, email, firstname, lastname)
     db.session.add(user)
-    session['userid'] = user.username
     login_user(user, remember=True)
     db.session.commit()
     
-    flash('User successfully registered')
-    #return redirect(url_for('login'))
     return jsonify({ 'username': user.username, 'status' : 'success' }), 201, {'Location': url_for('login', id = user.id, _external = True)}
 
 @app.route('/login',methods=['GET', 'POST'])
-@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return jsonify({'status':'failure', 'message':'Unsupported operation : GET'})
 
     username = request.form['username']
     password = request.form['password']
@@ -140,7 +133,6 @@ def login():
       if registered_user.check_password(password):
 	login_user(registered_user, remember=True)
 	session['userid'] = registered_user.username
-	flash('Logged in successfully')
 	return jsonify({'status':'success'}), 201
       else:
         flash('Username or Password is invalid' , 'error')
@@ -148,11 +140,10 @@ def login():
     return jsonify({"status":"failure", "message": "invalid username"}), 201
 
 @app.route('/plan',methods=['GET','POST'])
-@cross_origin(origin='*',headers=['Content-Type','Authorization'])
-#@login_required
 def landingpage():
         if request.method == 'GET':
-          return render_template('landingpage.html') 
+          return jsonify({'status':'failure', 'message':'Unsupported operation : GET'})
+ 
 	order = landing(request.form['startTime'],request.form['endTime'], request.form['budget'],request.form['location'],request.form['preference'])
 	
 	order.User = get_current_user()
@@ -160,7 +151,6 @@ def landingpage():
 	pref = request.form['preference']
 	db.session.add(order)
         db.session.commit()
-        flash('order successfully added')
 	
 	def defineParams(latitude, longitude):
 	  params = {}
@@ -183,14 +173,14 @@ def landingpage():
         	,access_token_secret = json_data["token_secret"])
 
     	  request = session.get("http://api.yelp.com/v2/search", params=params)
-    	  # transforming the data in JSON format
+    
+	  # transforming the data in JSON format
    	  data = request.json()
     	  session.close()
     	  return data
 
 	def result():
     	  g = geocoder.google(loc)
-    	  # locations = [(39.98,-82.98)]
     	  locations = [g.latlng]
 
     	  apiData = []
@@ -198,8 +188,11 @@ def landingpage():
             params = defineParams(latitude, longitude)
             apiData.append(getData(params))
             time.sleep(1.0)
-	  if(len(apiData) > 0):
-	    return jsonify({"status":"success", "data" : apiData[0]["businesses"]})
+	  if len(apiData) > 0:
+	    try:
+	    	return jsonify({"status":"success", "data" : apiData[0]["businesses"]})
+	    except:
+		return  jsonify({"status":"failure", "data" : apiData[0]})
 	  else: 
 	    return jsonify({"status": "failure"})
 
