@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
 cors = CORS(app)  # https://flask-cors.readthedocs.org/en/latest/
-logging.basicConfig(filename='site_log.txt', level=logging.DEBUG,
+logging.basicConfig(filename='server.log', level=logging.DEBUG,
                     format='%(asctime)s %(message)s')
 logger = logging.getLogger(__name__)
 

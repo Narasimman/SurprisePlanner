@@ -47,6 +47,11 @@ def register():
     email     = request.form['email']
     firstname = request.form['firstname'] 
     lastname  = request.form['lastname']
+
+    #validate existing user
+    if User.query.filter_by(username = username).first() is not None:
+        return jsonify({'status':'failure', 'message':'username already exists'}), 201
+
     user = User(username, password, email, firstname, lastname)
     db.session.add(user)
     login_user(user, remember=True)
