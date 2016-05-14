@@ -12,18 +12,17 @@ import rauth
 
 import pandas
 import simplejson as json
+from app import db
+from app import app
 
 import geocoder
 
-app = Flask(__name__)
-app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://websysS16GB2:websysS16GB2!!@websys3/websysS16GB2'
 app.secret_key = 'secret'
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -72,12 +71,17 @@ class User(db.Model):
  
 
 @login_manager.user_loader
-def load_user(id):
-    return User.query.get(int(id))
+def load_user(uid):
+    return User.get(uid)
 
 @app.before_request
 def before_request():
-    g.user = current_user
+    print "before request"
+    print current_user
+    #g.user = current_user
+
+def get_current_user():
+  return current_user
 
 class landing(db.Model):
     __tablename__ = "OrderRequest"
@@ -91,13 +95,13 @@ class landing(db.Model):
     preference = db.Column('preference', db.String(45))
     ordered_on = db.Column('ordered_on' , db.DateTime)
 
-    def __init__(self ,StartTime, Budget, StartLocation, preference):
-        self.StartTime = StartTime
-        #self.EndTime = EndTime
-	self.StartLocation = StartLocation
-        self.Budget = Budget
+    def __init__(self ,startTime, endTime, budget, location, preference):
+        self.StartTime = startTime
+        self.EndTime = endTime
+	self.StartLocation = location
+        self.Budget = budget
 	self.preference = preference
-       # self.Zip = Zip
+        self.Zip = location
         self.ordered_on = datetime.utcnow()
 
 @app.route('/register' , methods=['GET', 'POST'])
@@ -113,6 +117,8 @@ def register():
     lastname  = request.form['lastname']
     user = User(username, password, email, firstname, lastname)
     db.session.add(user)
+    session['userid'] = user.username
+    login_user(user, remember=True)
     db.session.commit()
     
     flash('User successfully registered')
@@ -130,10 +136,10 @@ def login():
 
     registered_user = User.query.filter_by(username=username).first()
     if registered_user:
-      flash(registered_user.check_password(password))
 
       if registered_user.check_password(password):
-	login_user(registered_user)
+	login_user(registered_user, remember=True)
+	session['userid'] = registered_user.username
 	flash('Logged in successfully')
 	return jsonify({'status':'success'}), 201
       else:
@@ -143,13 +149,14 @@ def login():
 
 @app.route('/plan',methods=['GET','POST'])
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
+#@login_required
 def landingpage():
         if request.method == 'GET':
           return render_template('landingpage.html') 
-	order = landing(request.form['StartTime'],request.form['Budget'],request.form['StartLocation'],request.form['preference'])
+	order = landing(request.form['startTime'],request.form['endTime'], request.form['budget'],request.form['location'],request.form['preference'])
 	
-	order.User = g.user
-	loc = request.form['StartLocation']
+	order.User = get_current_user()
+	loc = request.form['location']
 	pref = request.form['preference']
 	db.session.add(order)
         db.session.commit()
@@ -191,7 +198,10 @@ def landingpage():
             params = defineParams(latitude, longitude)
             apiData.append(getData(params))
             time.sleep(1.0)
-    	  return (json.dumps(apiData[0]["businesses"], sort_keys=True, indent=4 * ' '))	
+	  if(len(apiData) > 0):
+	    return jsonify({"status":"success", "data" : apiData[0]["businesses"]})
+	  else: 
+	    return jsonify({"status": "failure"})
 
 	return result()
  
