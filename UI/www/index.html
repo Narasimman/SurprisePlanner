@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 </head>
 <body>	
 	<!-- SIGNUP PAGE -->
@@ -26,12 +27,30 @@
 	      	<div id="signup-form">   
 	          <h1>Sign Up for Free</h1>		          
 	          <form action="/register" method="post" id="r-form">		          
-	          	<input id="firstname" name="firstname" type="text" required autocomplete="off" placeholder="First Name"/>
-	            <input id="lastname" name="lastname" type="text"required autocomplete="off" placeholder="Last Name"/>
-	            <input id="r-username" name="username" type="text"required autocomplete="off" placeholder="Username"/>
-	            <input id="email" name="email" type="email"required autocomplete="off" placeholder="Email Address"/>
-	            <input id="telephone" name="telephone" type="tel" required autocomplete="off" placeholder="Mobile Number"/>
-	            <input id="r-password" name="password" type="password" required autocomplete="off" placeholder="Password"/>
+	          	<div data-role="fieldcontainer">
+	          		<input id="firstname" name="firstname" type="text" required autocomplete="off" placeholder="First Name"/>
+	          	</div>
+	            
+	            <div data-role="fieldcontainer">
+	            	<input id="lastname" name="lastname" type="text"required autocomplete="off" placeholder="Last Name"/>
+	            </div>
+	            
+	            <div data-role="fieldcontainer">
+	            	<input id="r-username" name="username" type="text"required autocomplete="off" placeholder="Username"/>
+	            </div>
+	            
+	            <div data-role="fieldcontainer">
+	            	<input id="email" name="email" type="email" required autocomplete="off" placeholder="Email Address"/>
+	            </div>
+	            
+	            <div data-role="fieldcontainer">
+	            	<input id="telephone" name="telephone" type="tel" required autocomplete="off" placeholder="Mobile Number"/>
+	            </div>
+	            
+	            <div data-role="fieldcontainer">
+	            	<input id="r-password" name="password" type="password" required autocomplete="off" placeholder="Password"/>
+	           	</div>
+	           	
 	           	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Get Started
 	         	  	<input type="button" data-enhanced="true" id="signup-submit" value="Input value">
 			    </div>
@@ -59,9 +78,14 @@
 		<div role="main" class="ui-content">			
 	      	<div id="login-form">   
 	          <h1>Login</h1>		          
-	          <form action="/login" method="post" id="l-form">		          
-	          	<input name="username" id="l-username" type="text" required autocomplete="off" placeholder="Username"/>
-	            <input name="password" id="l-password" type="password" required autocomplete="off" placeholder="Password"/>
+	          <form action="/login" method="post" id="l-form">	
+	          	<div data-role="fieldcontainer">	          
+	          		<input name="username" id="l-username" type="text" required autocomplete="off" placeholder="Username"/>
+	            </div>
+	            
+	            <div data-role="fieldcontainer">
+	            	<input name="password" id="l-password" type="password" required autocomplete="off" placeholder="Password"/>
+	          	</div>
 	          	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Login
 	         	  	<input type="button" data-enhanced="true" id="login-submit" value="Input value">
 			    </div>
@@ -82,22 +106,31 @@
 		<div role="main" class="ui-content">
 		    <div id="plan-form">   
 	          <h1>Plan</h1>		          
-	          <form action="/plan" method="post" id="p-form">		          
-	          	<label for="startTime">Start Time <span class="required">*</span></label>
-				<input id="p-starttime" type="date" name="startTime" />
-
-				<label for="endTime">End Time <span class="required">*</span></label>
-				<input id="p-endtime" type="date" name="endTime" />
-
-	          	<label for="budget">Budget<span class="required">*</span></label>
-	          	<input id="p-budget" type="number" name="budget" />
+	          <form action="/plan" method="post" id="p-form">
+	          	<div data-role="fieldcontainer">
+	          		<label for="startTime">Start Time <span class="required">*</span></label>
+					<input id="p-starttime" type="date" name="startTime"  required/>
+				</div>
 				
-				<label for="location">ZIP Code <span class="required">*</span></label>
-				<input id="p-location" type="number" name="location"/>
+				<div data-role="fieldcontainer">
+					<label for="endTime">End Time <span class="required">*</span></label>
+					<input id="p-endtime" type="date" name="endTime"  required/>
+				</div>
 
-				<label for="preference">Preference <span class="required">*</span></label>
-				<input id="p-pref" type="text" placeholder="indian" name="preference" />
-
+	          	<div data-role="fieldcontainer">
+	          		<label for="budget">Budget<span class="required">*</span></label>
+	          		<input id="p-budget" type="number" name="budget"  required/>
+				</div>
+				
+				<div data-role="fieldcontainer">
+					<label for="location">ZIP Code <span class="required">*</span></label>
+					<input id="p-location" type="number" name="location"  required/>
+				</div>
+				
+				<div data-role="fieldcontainer">
+					<label for="preference">Preference <span class="required">*</span></label>
+					<input id="p-pref" type="text" placeholder="indian" name="preference"  required/>
+				</div>
 				<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Surprise Me!
 	         	  	<input type="button" data-enhanced="true" id="plan-submit" value="Plan">
 			    </div>				
@@ -134,33 +167,40 @@
 		});
 
 		var fetch = function(url, formid, nextpageid) {
-			$.ajax({url: 'http://websys3.stern.nyu.edu:7002/' + url,
-            	data: $('#' + formid).serialize(),
-            	type: 'post',                   
-            	async: 'true',
-                dataType: 'json',
-            	beforeSend: function() {
-                	$.mobile.loading('show'); // This will show ajax spinner
-            	},
+			//$('#' + formid).validate({
+			//	submitHandler : function() {
+					$.ajax({url: 'http://websys3.stern.nyu.edu:7002/' + url,
+		            	data: $('#' + formid).serialize(),
+		            	type: 'post',                   
+		            	async: 'true',
+		                dataType: 'json',
+		                xhrFields: {
+    						  withCredentials: true
+   						},
+		            	beforeSend: function() {
+		                	$.mobile.loading('show'); // This will show ajax spinner
+		            	},
+		            
+		            	complete: function() {
+		                	$.mobile.loading('hide'); // This will hide ajax spinner
+		            	},
+		            	
+		            	success: function (result) {
+		                    if(result.status && result.status == "success") {
+		                        $.mobile.changePage("#" + nextpageid);                         
+		                    } else if(result.status == "failure") {
+		                        alert(result.message); 
+		                    }
+		            	},
+		            
+		            	error: function (request,error) {
+		                	alert('Network error has occurred please try again!' + error);
+		            	}
+		        	});					
+				//}
+			//});		                   
             
-            	complete: function() {
-                	$.mobile.loading('hide'); // This will hide ajax spinner
-            	},
-            	
-            	success: function (result) {
-                    if(result.status && result.status == "success") {
-                        $.mobile.changePage("#" + nextpageid);                         
-                    } else if(result.status == "failure") {
-                        alert(result.message); 
-                    }
-            	},
-            
-            	error: function (request,error) {
-                	alert('Network error has occurred please try again!' + error);
-            	}
-        	});                   
-            
-		}
+		};
 
 		//login
 		$(document).on('pageinit', '#login', function(){  
@@ -177,14 +217,14 @@
 		// Register
 		$(document).on('pageinit', '#signup', function(){  
     	    $(document).on('click', '#signup-submit', function() { // catch the form's submit event
-        	    if($('#r-username').val().length > 0 && $('#r-password').val().length > 0
+        	  /*  if($('#r-username').val().length > 0 && $('#r-password').val().length > 0
         	    	&& $('#firstname').val().length > 0 && $('#lastname').val().length > 0
         	    	&& $('#email').val().length > 0 && $('#telephone').val().length > 0){
-                    	fetch('register', 'r-form', 'plan');            
-            	} else {
+              */      	fetch('register', 'r-form', 'plan');            
+            /*	} else {
                 	alert('Please fill all necessary fields');
             	}           
-        	    return false; // cancel original event to prevent form submitting
+        	*/    return false; // cancel original event to prevent form submitting
         	});    
 		});
 
