@@ -8,7 +8,15 @@
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.min.js"></script>
+
+	<style type="text/css">
+	input.error {
+		background-color: red;
+		color: white;
+	}
+	</style>
 </head>
 <body>	
 	<!-- SIGNUP PAGE -->
@@ -26,7 +34,7 @@
 		<div role="main" class="ui-content">
 	      	<div id="signup-form">   
 	          <h1>Sign Up for Free</h1>		          
-	          <form action="/register" method="post" id="r-form">		          
+	          <form method="post" id="r-form">		          
 	          	<div data-role="fieldcontainer">
 	          		<input id="firstname" name="firstname" type="text" required autocomplete="off" placeholder="First Name"/>
 	          	</div>
@@ -52,13 +60,19 @@
 	           	</div>
 	           	
 	           	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Get Started
-	         	  	<input type="button" data-enhanced="true" id="signup-submit" value="Input value">
+	         	  	<input type="submit" data-enhanced="true" id="signup-submit" value="Input value">
 			    </div>
 	          </form>
 		    </div>		    
     	</div><!-- ui-content -->  
     	
-    	<div data-role="footer"></div>    
+    	<div data-role="footer">
+    		<p style="text-align:center">
+    			Built by Team 2. <br>
+    			Narasimman  . Niharika . Charles . Colin . Aman
+    		</p>
+
+    	</div>    
 	</div> 
 	<!-- SIGNUP PAGE -->
 
@@ -78,7 +92,7 @@
 		<div role="main" class="ui-content">			
 	      	<div id="login-form">   
 	          <h1>Login</h1>		          
-	          <form action="/login" method="post" id="l-form">	
+	          <form method="post" id="l-form">	
 	          	<div data-role="fieldcontainer">	          
 	          		<input name="username" id="l-username" type="text" required autocomplete="off" placeholder="Username"/>
 	            </div>
@@ -87,13 +101,19 @@
 	            	<input name="password" id="l-password" type="password" required autocomplete="off" placeholder="Password"/>
 	          	</div>
 	          	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Login
-	         	  	<input type="button" data-enhanced="true" id="login-submit" value="Input value">
+	         	  	<input type="submit" data-enhanced="true" id="login-submit" value="Input value">
 			    </div>
 	          </form>
 		    </div>		    
     	</div><!-- ui-content -->  
     	
-    	<div data-role="footer"></div>    
+    	<div data-role="footer">
+    		<p style="text-align:center">
+    			Built by Team 2. <br>
+    			Narasimman  . Niharika . Charles . Colin . Aman
+    		</p>
+
+    	</div>    
 	</div>
 	<!-- LOGIN PAGE  -->
 
@@ -106,7 +126,7 @@
 		<div role="main" class="ui-content">
 		    <div id="plan-form">   
 	          <h1>Plan</h1>		          
-	          <form action="/plan" method="post" id="p-form">
+	          <form method="post" id="p-form">
 	          	<div data-role="fieldcontainer">
 	          		<label for="startTime">Start Time <span class="required">*</span></label>
 					<input id="p-starttime" type="date" name="startTime"  required/>
@@ -132,21 +152,27 @@
 					<input id="p-pref" type="text" placeholder="indian" name="preference"  required/>
 				</div>
 				<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Surprise Me!
-	         	  	<input type="button" data-enhanced="true" id="plan-submit" value="Plan">
+	         	  	<input type="submit" data-enhanced="true" id="plan-submit" value="Plan">
 			    </div>				
 
 	          </form>
 		    </div>		    
     	</div><!-- ui-content -->  
     	
-    	<div data-role="footer"></div>    
+    	<div data-role="footer">
+    		<p style="text-align:center">
+    			Built by Team 2. <br>
+    			Narasimman . Niharika . Charles . Colin . Aman
+    		</p>
+
+    	</div>    
 	</div>
 	<!-- PLAN PAGE  -->
 
 	<!-- CONFIRMATION PAGE  -->
 	<div id="confirm" data-role="page" data-title="Confirmation">
   		<div data-role="header">
-  			<div class="form-style-2-heading">Welcome to Surprise Date!!!</div>
+  			<h1>Welcome to Surprise Date!!!</h1>
 		</div>
 
 		<div role="main" class="ui-content">
@@ -155,7 +181,13 @@
 		    </div>		    
     	</div><!-- ui-content -->  
     	
-    	<div data-role="footer"></div>    
+    	<div data-role="footer">
+    		<p style="text-align:center">
+    			Built by Team 2. <br>
+    			Narasimman . Niharika . Charles . Colin . Aman
+    		</p>
+
+    	</div>    
 	</div>
 	<!-- CONFIRM PAGE  -->
 
@@ -166,82 +198,62 @@
    			$.support.cors = true;
 		});
 
-		var fetch = function(url, formid, nextpageid) {
-			//$('#' + formid).validate({
-			//	submitHandler : function() {
-					$.ajax({url: 'http://websys3.stern.nyu.edu:7002/' + url,
-		            	data: $('#' + formid).serialize(),
-		            	type: 'post',                   
-		            	async: 'true',
-		                dataType: 'json',
-		                xhrFields: {
-    						  withCredentials: true
-   						},
-		            	beforeSend: function() {
-		                	$.mobile.loading('show'); // This will show ajax spinner
-		            	},
-		            
-		            	complete: function() {
-		                	$.mobile.loading('hide'); // This will hide ajax spinner
-		            	},
-		            	
-		            	success: function (result) {
-		                    if(result.status && result.status == "success") {
-		                        $.mobile.changePage("#" + nextpageid);                         
-		                    } else if(result.status == "failure") {
-		                        alert(result.message); 
-		                    }
-		            	},
-		            
-		            	error: function (request,error) {
-		                	alert('Network error has occurred please try again!' + error);
-		            	}
-		        	});					
-				//}
-			//});		                   
-            
-		};
+		$(function() {
+			var fetch = function(url, formid, nextpageid) {		
+				$.ajax({url: 'http://websys3.stern.nyu.edu:7002/' + url,
+	            	data: $('#' + formid).serialize(),
+	            	type: 'post',                   
+	            	async: 'true',
+	                dataType: 'json',
+	                xhrFields: {
+						  withCredentials: true
+						},
+	            	beforeSend: function() {
+	                	$.mobile.loading('show'); 
+	            	},
+	            
+	            	complete: function() {
+	                	$.mobile.loading('hide');
+	            	},
+	            	
+	            	success: function (result) {
+	                    if(result.status && result.status == "success") {
+	                        $.mobile.changePage("#" + nextpageid);                         
+	                    } else if(result.status == "failure") {
+	                        alert(result.message); 
+	                    }
+	            	},
+	            
+	            	error: function (request,error) {
+	                	alert('Network error has occurred please try again!' + error);
+	            	}
+	        	});
+			};
 
-		//login
-		$(document).on('pageinit', '#login', function(){  
-    	    $(document).on('click', '#login-submit', function() { // catch the form's submit event
-        	    if($('#l-username').val().length > 0 && $('#l-password').val().length > 0){
-                    fetch('login', 'l-form', 'plan');                    
-            	} else {
-                	alert('Please fill all necessary fields');
-            	}           
-        	    return false; // cancel original event to prevent form submitting
-        	});    
+			$.validator.setDefaults({
+				errorPlacement: function(error, element) { }
+			});
+			$("#l-form").validate({
+				submitHandler : function() {				
+                    fetch('login', 'l-form', 'plan');
+                }
+			});
+
+			$("#r-form").validate({
+				submitHandler : function() {				
+                    fetch('register', 'r-form', 'plan');
+                }
+			});
+
+			$("#p-form").validate({
+				submitHandler : function() {				
+                    fetch('plan', 'p-form', 'confirm'); 
+                }
+			});
+
 		});
-
-		// Register
-		$(document).on('pageinit', '#signup', function(){  
-    	    $(document).on('click', '#signup-submit', function() { // catch the form's submit event
-        	  /*  if($('#r-username').val().length > 0 && $('#r-password').val().length > 0
-        	    	&& $('#firstname').val().length > 0 && $('#lastname').val().length > 0
-        	    	&& $('#email').val().length > 0 && $('#telephone').val().length > 0){
-              */      	fetch('register', 'r-form', 'plan');            
-            /*	} else {
-                	alert('Please fill all necessary fields');
-            	}           
-        	*/    return false; // cancel original event to prevent form submitting
-        	});    
-		});
-
-
-		// Plan
-		$(document).on('pageinit', '#plan', function(){  
-    	    $(document).on('click', '#plan-submit', function() { // catch the form's submit event
-        	    if($('#p-starttime').val().length > 0 && $('#p-endtime').val().length > 0
-        	    	&& $('#p-budget').val().length > 0 && $('#p-location').val().length > 0
-        	    	&& $('#p-pref').val().length > 0){
-        	    		fetch('plan', 'p-form', 'confirm');                    
-            	} else {
-                	alert('Please fill all necessary fields');
-            	}           
-        	    return false; // cancel original event to prevent form submitting
-        	});    
-		});
+		
+		
 
 	</script>
 
