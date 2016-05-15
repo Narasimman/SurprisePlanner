@@ -17,6 +17,7 @@ import geocoder
 from app import db
 from app import app
 from models import User, landing
+import plan
 
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -69,74 +70,28 @@ def login():
 
     registered_user = User.query.filter_by(username=username).first()
     if registered_user:
-
       if registered_user.check_password(password):
-	login_user(registered_user, remember=True)
-	session['userid'] = registered_user.username
-	return jsonify({'status':'success'}), 201
+        login_user(registered_user, remember=True)
+        return jsonify({'status':'success'}), 201
       else:
-        flash('Username or Password is invalid' , 'error')
         return jsonify({"status":"failure", "message": "invalid password"}), 201
-    return jsonify({"status":"failure", "message": "invalid username"}), 201
+    return jsonify({"status":"failure", "message": "invalid username/password"}), 201
 
 @app.route('/plan',methods=['GET','POST'])
 def landingpage():
-        if request.method == 'GET':
-          return jsonify({'status':'failure', 'message':'Unsupported operation : GET'})
+    if request.method == 'GET':
+        return jsonify({'status':'failure', 'message':'Unsupported operation : GET'})
  
-	order = landing(request.form['startTime'],request.form['endTime'], request.form['budget'],request.form['location'],request.form['preference'])
-	
-	order.User = get_current_user()
-	loc = request.form['location']
-	pref = request.form['preference']
-	db.session.add(order)
-        db.session.commit()
-	
-	def defineParams(latitude, longitude):
-	  params = {}
-	  params["term"] = pref
-    	  params["ll"] = "{},{}".format(str(latitude), str(longitude))
-    	  #params["radius_filter"] = "2000"
-    	  #params["sort"] = "2"
-    	  params["limit"] = "1"
-
-    	  return params
-
-	def getData(params):
-	  # setting up personal Yelp account
-    	  with open("config_secret.json",'r') as json_file:
-            json_data = json.load(json_file)
-    	  session = rauth.OAuth1Session(
-        	consumer_key = json_data["consumer_key"]
-        	,consumer_secret = json_data["consumer_secret"]
-        	,access_token = json_data["token"]
-        	,access_token_secret = json_data["token_secret"])
-
-    	  request = session.get("http://api.yelp.com/v2/search", params=params)
+    order = landing(request.form['startTime'],request.form['endTime'], request.form['budget'],request.form['location'],request.form['preference'])
     
-	  # transforming the data in JSON format
-   	  data = request.json()
-    	  session.close()
-    	  return data
-
-	def result():
-    	  g = geocoder.google(loc)
-    	  locations = [g.latlng]
-
-    	  apiData = []
-    	  for latitude, longitude in locations:
-            params = defineParams(latitude, longitude)
-            apiData.append(getData(params))
-            time.sleep(1.0)
-	  if len(apiData) > 0:
-	    try:
-	    	return jsonify({"status":"success", "data" : apiData[0]["businesses"]})
-	    except:
-		return  jsonify({"status":"failure", "data" : apiData[0]})
-	  else: 
-	    return jsonify({"status": "failure"})
-
-	return result()
+    order.User = get_current_user()
+    loc = request.form['location']
+    pref = request.form['preference']
+    db.session.add(order)
+    db.session.commit()
+    
+    plans = plan.grabdata(loc)
+    return jsonify({'status':'success', 'data': plans}), 201
  
 if __name__ == '__main__': 
     app.run(host='0.0.0.0', port=7002,debug=True)
