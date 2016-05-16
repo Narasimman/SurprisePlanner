@@ -66,3 +66,12 @@ class landing(db.Model):
         self.Zip = location
         self.ordered_on = datetime.utcnow()
 
+
+class Results(db.Model):
+    __tablename__ = "Results"
+    id = db.Column('id',db.Integer , primary_key=True)
+    user = db.Column('username', db.String(45))
+    data = db.Column('data',db.String(600))
+
+    def __init__(self , data):
+        self.data = data
