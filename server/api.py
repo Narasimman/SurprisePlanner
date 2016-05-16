@@ -16,7 +16,7 @@ import geocoder
 
 from app import db
 from app import app
-from models import User, landing
+from models import User, landing, Results
 import plan
 
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
@@ -91,7 +91,23 @@ def landingpage():
     db.session.commit()
     
     plans = plan.grabdata(loc)
-    return jsonify({'status':'success', 'data': plans}), 201
+    
+    result = plans['yelp'] + "::" + plans['eventbrite']['text']
+    events = Results(result)
+    events.user = get_current_user().username
+    db.session.add(events)
+    db.session.commit()
+
+    return jsonify({'status':'success', 'data': plans, 'id': events.id}), 201
+
+@app.route('/orders', methods=['GET', 'POST'])
+def orders():
+    res = Results.query.filter_by(user='narasimman').all()
+    e = []
+    for d in res:
+     e.append(d.data)
+
+    return jsonify({'status':'success', 'data': e}), 201
  
 if __name__ == '__main__': 
     app.run(host='0.0.0.0', port=7002,debug=True)
