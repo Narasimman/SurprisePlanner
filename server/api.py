@@ -102,7 +102,7 @@ def landingpage():
 
 @app.route('/orders', methods=['GET', 'POST'])
 def orders():
-    res = Results.query.filter_by(user='narasimman').all()
+    res = Results.query.filter_by(user=get_current_user().username).all()
     e = []
     for d in res:
      e.append(d.data)
