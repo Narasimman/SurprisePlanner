@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 	
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
@@ -36,7 +36,7 @@
 	<!-- SIGNUP PAGE -->
 	<div id="signup" data-role="page" data-title="Register">
   		<div data-role="header">
-  			<h1 class="title">Welcome to Surprise Planner</h1>
+  			<h1 class="title">Surprise Planner</h1>
 				<div data-role="navbar">
 			    <ul>
 			    	<li><a href="#signup" class="ui-btn-active ui-state-persist"  data-transition="slide">Sign Up</a></li>
@@ -73,7 +73,7 @@
 	            	<input id="r-password" name="password" type="password" required autocomplete="off" placeholder="Password"/>
 	           	</div>
 	           	
-	           	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Get Started
+	           	<div class="ui-input-btn ui-btn ui-btn-raised clr-primary ui-corner-all ui-shadow">Get Started
 	         	  	<input type="submit" data-enhanced="true" id="signup-submit" value="Input value">
 			    </div>
 	          </form>
@@ -93,7 +93,7 @@
 	<!-- LOGIN PAGE  -->
 	<div id="login" data-role="page" data-title="login">
   		<div data-role="header">
-  			<h1 class="title">Welcome to Surprise Planner</h1>
+  			<h1 class="title">Surprise Planner</h1>
   			<div data-role="navbar">
 			    <ul>
 			    	<li><a href="#signup" data-transition="slide" data-direction="reverse">Sign Up</a></li>
@@ -114,7 +114,7 @@
 	            <div data-role="fieldcontainer">
 	            	<input name="password" id="l-password" type="password" required autocomplete="off" placeholder="Password"/>
 	          	</div>
-	          	<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Login
+	          	<div class="ui-input-btn ui-btn ui-btn-raised clr-primary ui-corner-all ui-shadow">Login
 	         	  	<input type="submit" data-enhanced="true" id="login-submit" value="Input value">
 			    </div>
 	          </form>
@@ -131,10 +131,32 @@
 	</div>
 	<!-- LOGIN PAGE  -->
 
+	<!-- Home page -->
+	<div id="home" data-role="page" data-title="Home">
+  		<div data-role="header">
+  			<h1 class="title">Surprise Planner</h1>
+		</div>
+
+		<div role="main" class="ui-content">
+		    <h2>Ready for an adventure?</h2>
+			<div style="margin:15px;"><a href="#plan" data-transition="slide" class="ui-btn ui-btn-raised clr-primary">Plan</a></div>
+			<div style="margin:15px;"><a href="#order" data-transition="slide" class="ui-btn ui-btn-raised clr-primary">View your orders</a></div>
+    	</div><!-- ui-content -->  
+    	
+    	<div data-role="footer">
+    		<p style="text-align:center">
+    			Built by Team 2. <br>
+    			Narasimman . Niharika . Charles . Colin . Aman
+    		</p>
+
+    	</div>    
+	</div>
+	<!-- HOME PAGE  -->
+
 	<!-- PLAN PAGE  -->
 	<div id="plan" data-role="page" data-title="Plan">
   		<div data-role="header">
-  			<h1 class="title">Welcome to Surprise Planner</h1>
+  			<h1 class="title">Surprise Planner</h1>
 		</div>
 
 		<div role="main" class="ui-content">
@@ -165,7 +187,7 @@
 					<label for="preference">Preference <span class="required">*</span></label>
 					<input id="p-pref" type="text" placeholder="indian" name="preference"  required/>
 				</div>
-				<div class="ui-input-btn ui-btn ui-corner-all ui-shadow">Surprise Me!
+				<div class="ui-input-btn ui-btn ui-btn-raised clr-primary ui-corner-all ui-shadow">Surprise Me!
 	         	  	<input type="submit" data-enhanced="true" id="plan-submit" value="Plan">
 			    </div>				
 
@@ -186,7 +208,7 @@
 	<!-- CONFIRMATION PAGE  -->
 	<div id="confirm" data-role="page" data-title="Confirmation">
   		<div data-role="header">
-  			<h1 class="title">Welcome to Surprise Planner</h1>
+  			<h1 class="title">Surprise Planner</h1>
 		</div>
 
 		<div role="main" class="ui-content">
@@ -212,7 +234,7 @@
 	<!-- Orders PAGE  -->
 	<div id="order" data-role="page" data-title="Confirmation">
   		<div data-role="header">
-  			<h1 class="title">Welcome to Surprise Planner</h1>
+  			<h1 class="title">Surprise Planner</h1>
 		</div>
 
 		<div role="main" class="ui-content">
@@ -283,13 +305,13 @@
 			});
 			$("#l-form").validate({
 				submitHandler : function() {				
-                    fetch('login', 'l-form', 'plan');
+                    fetch('login', 'l-form', 'home');
                 }
 			});
 
 			$("#r-form").validate({
 				submitHandler : function() {				
-                    fetch('register', 'r-form', 'plan');
+                    fetch('register', 'r-form', 'login');
                 }
 			});
 
