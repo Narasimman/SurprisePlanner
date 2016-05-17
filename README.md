@@ -1,4 +1,6 @@
 # SurprisePlanner
+https://github.com/narasimman/SurprisePlanner
+
 
 This is a mobile app developed for web development and programming course at NYU by Professor. Norman White
 
