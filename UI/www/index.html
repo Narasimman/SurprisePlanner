@@ -216,7 +216,7 @@
 	          <h2>Your Plan is Scheduled. Go for an adventure!</h2>
 
 	          <div>
-	          	<a href="#order" data-transition="slide" class="ui-btn"> view your orders </a>
+	          	<a href="#order" data-transition="slide" class="ui-input-btn ui-btn ui-btn-raised clr-primary ui-corner-all ui-shadow"> view your orders </a>
 	          </div>
 		    </div>		    
     	</div><!-- ui-content -->  
@@ -245,7 +245,7 @@
 	          	<ul id="orders" data-role="listview" data-inset="true"></ul>
 	          </div>
 
-	          	<a href="#plan" data-transition="slide" class="ui-btn"> Plan </a>
+	          	<a href="#plan" data-transition="slide" class="ui-input-btn ui-btn ui-btn-raised clr-primary ui-corner-all ui-shadow"> Plan </a>
 	          </div>
 		    </div>		    
     	</div><!-- ui-content -->  
@@ -283,22 +283,38 @@
 	            	},
 	            
 	            	complete: function() {
-	                	$.mobile.loading('hide');
+	                	//$.mobile.loading('hide');
 	            	},
 	            	
 	            	success: function (result) {
+	            		$.mobile.loading('hide');
 	                    if(result.status && result.status == "success") {
 	                        $.mobile.changePage("#" + nextpageid);                         
 	                    } else if(result.status == "failure") {
-	                        alert(result.message); 
+	                        show_error_message(result.message, 4000); 
 	                    }
 	            	},
 	            
 	            	error: function (request,error) {
-	                	alert('Network error has occurred please try again!' + error);
+	                	show_error_message('Network error has occurred please try again!' + error, 4000);
 	            	}
 	        	});
 			};
+
+			var show_error_message = function(message, delay) {
+				$.mobile.loading('hide');
+			    $.mobile.loading('show',
+					{ 
+						theme: "e", 
+						text: (message || 'ERROR'),
+			        	textonly: true, 
+			        	textVisible: true 
+			        });
+			    	
+			    	setTimeout(function() {
+			        	$.mobile.loading('hide');
+			    	}, ((delay && delay > 0) ? delay : 5000));
+			}
 
 			$.validator.setDefaults({
 				errorPlacement: function(error, element) { }
@@ -342,12 +358,12 @@
 	                        $('#orders').listview('refresh');
 	                        
 	                    } else if(result.status == "failure") {
-	                        alert(result.message); 
+	                        show_error_message(result.message, 4000); 
 	                    }
 	            	},
 	            
 	            	error: function (request,error) {
-	                	alert('Network error has occurred please try again!' + error);
+	                	show_error_message('Network error has occurred please try again!' + error, 4000);
 	            	}
 	        	});
 
@@ -359,7 +375,7 @@
 
 	</script>
 
-<!--	<script type="text/javascript" src="cordova.js"></script>-->
+ 	<!--<script type="text/javascript" src="cordova.js"></script>-->
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
