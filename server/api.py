@@ -58,7 +58,7 @@ def register():
     login_user(user, remember=True)
     db.session.commit()
     
-    return jsonify({ 'username': user.username, 'status' : 'success' }), 201, {'Location': url_for('login', id = user.id, _external = True)}
+    return jsonify({ 'username': user.username, 'status' : 'success' }), 201
 
 @app.route('/login',methods=['GET', 'POST'])
 def login():
